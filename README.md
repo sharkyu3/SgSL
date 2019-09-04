@@ -46,7 +46,7 @@ Github: https://github.com/sharkyu3/diet_tracker
 herokuapp - https://www.heroku.com
 
 ## Workflow
-ERD - /public/punnet_ERD.pdf
+ERD - /SiGn_ERD.pdf
 Wireframes - public/wireframes
 
 ## Technologies used
