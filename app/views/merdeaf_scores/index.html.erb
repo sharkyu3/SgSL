@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Merdeaf Scores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Score</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @merdeaf_scores.each do |merdeaf_score| %>
+      <tr>
+        <td><%= merdeaf_score.name %></td>
+        <td><%= merdeaf_score.score %></td>
+        <td><%= link_to 'Show', merdeaf_score %></td>
+        <td><%= link_to 'Edit', edit_merdeaf_score_path(merdeaf_score) %></td>
+        <td><%= link_to 'Destroy', merdeaf_score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Merdeaf Score', new_merdeaf_score_path %>

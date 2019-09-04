@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  word: MyText
+  public_id: MyText
+  name: MyText
+  email: MyText
+  status: MyText
+
+two:
+  word: MyText
+  public_id: MyText
+  name: MyText
+  email: MyText
+  status: MyText

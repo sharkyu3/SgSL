@@ -1,0 +1,2 @@
+class MerdeafScore < ApplicationRecord
+end
