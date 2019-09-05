@@ -3,6 +3,10 @@ class GamesController < ApplicationController
   end
 
   def merdeaf
-    render 'merdeaf'
+    @alphabets = Alphabet.all
+    respond_to do |format|
+      format.html { render :merdeaf }
+      format.json { render json: @alphabets }
+    end
   end
 end
