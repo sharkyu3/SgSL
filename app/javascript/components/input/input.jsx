@@ -18,7 +18,7 @@ export default class Input extends React.Component{
     render(){
         return(
             <div>
-                <input onChange={()=>{this.changeHandler()}} value={this.state.input}/>
+                <input onChange={()=>{this.changeHandler()}} value={this.state.input} onKeyDown={()=>{this.props.onSpaceHandler()}}/>
             </div>
             )
     }

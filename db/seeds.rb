@@ -16,7 +16,7 @@ alphabets_list = [
   ["G", "https://sadeafportal.org.sg/sgslbank/wp-content/uploads/2018/07/G.jpg"],
   ["H", "https://sadeafportal.org.sg/sgslbank/wp-content/uploads/2018/07/H.jpg"],
   ["I", "https://sadeafportal.org.sg/sgslbank/wp-content/uploads/2018/07/I.jpg"],
-  ["J", "https://sadeafportal.org.sg/sgslbank/wp-content/uploads/2018/07/J.jpg"],
+  ["J", "https://sadeafportal.org.sg/sgslbank/wp-content/uploads/2018/07/J.png"],
   ["K", "https://sadeafportal.org.sg/sgslbank/wp-content/uploads/2018/07/K.jpg"],
   ["L", "https://sadeafportal.org.sg/sgslbank/wp-content/uploads/2018/07/L.jpg"],
   ["M", "https://sadeafportal.org.sg/sgslbank/wp-content/uploads/2018/07/M.jpg"],

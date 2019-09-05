@@ -17,3 +17,9 @@
  .game-title{
  	color:blue;
  }
+
+ .alphabets{
+ 	border-radius: 10px;
+ 	width:15%;
+ 	margin: 5px;
+ }
