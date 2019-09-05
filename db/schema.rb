@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_095914) do
+ActiveRecord::Schema.define(version: 2019_09_05_062645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alphabets", force: :cascade do |t|
+    t.text "name"
+    t.text "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "comment"
@@ -35,6 +42,13 @@ ActiveRecord::Schema.define(version: 2019_09_04_095914) do
   create_table "merdeaf_scores", force: :cascade do |t|
     t.text "name"
     t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "numbers", force: :cascade do |t|
+    t.text "name"
+    t.text "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
