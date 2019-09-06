@@ -9,17 +9,16 @@ export default class Main extends React.Component{
     constructor(){
         super();
         this.state = {
-            totalScore : 0,
-            roundScore : 0,
-            lives : 5,
+            name: "",
+            score : 0,
             stage : 1,
             timer : 60,
 
-            one : RandomWords({exactly: 15, min: 3, maxLength: 5}),
-            two : RandomWords({exactly: 15, min: 4, maxLength: 9}),
-            three : RandomWords({exactly: 15, min: 3, maxLength: 6}),
-            four : RandomWords({exactly: 15, min: 4, maxLength: 9}),
-            five : RandomWords({exactly: 15, min: 5, maxLength: 10}),
+            one : RandomWords({exactly: 60, min: 3, maxLength: 5}),
+            two : RandomWords({exactly: 60, min: 4, maxLength: 9}),
+            three : RandomWords({exactly: 60, min: 3, maxLength: 6}),
+            four : RandomWords({exactly: 60, min: 4, maxLength: 9}),
+            five : RandomWords({exactly: 60, min: 5, maxLength: 10}),
 
             word: ""
         };
@@ -42,11 +41,16 @@ export default class Main extends React.Component{
 
     onSpaceHandler(){
         if (event.key === " "){
-            console.log("detected space bar! check word!", event.target.value)
             if(this.state.word === event.target.value){
                 console.log("score points!")
+                let newScore = this.state.score + 10;
+                this.setState({score: newScore})
             }else{
                 console.log("WRONG!")
+                if(this.state.score > 0){
+                    let newScore = this.state.score - 5;
+                    this.setState({score: newScore})
+                }
             }
         }
     }
@@ -68,6 +72,11 @@ export default class Main extends React.Component{
     return(
         <div className="container">
             <h1 className="game-title">Swim Merdeaf Swim!</h1>
+            <div className="row">
+                <div className="score">
+                    {this.state.score}
+                </div>
+            </div>
             <div className="row">
                 <DisplayWord word={word}/>
             </div>

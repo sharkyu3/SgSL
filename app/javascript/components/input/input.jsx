@@ -11,6 +11,14 @@ export default class Input extends React.Component{
         };
     }
 
+    onSpace(){
+        if (event.key === " "){
+            console.log("detected space in input component");
+            this.setState({input: ""});
+            this.props.onSpaceHandler()
+        }
+    }
+
     changeHandler(){
         this.setState({input:event.target.value});
     }
@@ -18,7 +26,7 @@ export default class Input extends React.Component{
     render(){
         return(
             <div>
-                <input onChange={()=>{this.changeHandler()}} value={this.state.input} onKeyDown={()=>{this.props.onSpaceHandler()}}/>
+                <input onChange={()=>{this.changeHandler()}} value={this.state.input} onKeyDown={()=>{this.onSpace()}}/>
             </div>
             )
     }

@@ -41,14 +41,14 @@ export default class DisplayWord extends React.Component{
 
         if (array.length > 0) {
             imageDisplay = array.map(image => {
-                return <img src={image} class="alphabets"/>
+                return <img src={image} className="alphabets"/>
             })
         }
 
 
         return(
             <div>
-                <div class="img-holder">{imageDisplay}</div>
+                <div className="img-holder">{imageDisplay}</div>
                 <button>Start Level</button>
             </div>
             )
