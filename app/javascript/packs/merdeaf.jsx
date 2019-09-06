@@ -5,14 +5,17 @@ import RandomWords from 'random-words'
 import Input from '../components/input/input';
 import DisplayWord from '../components/displayword/displayword';
 
+
 export default class Main extends React.Component{
     constructor(){
         super();
         this.state = {
+            start: false,
+            buttonclass: "show-button",
             name: "",
             score : 0,
             stage : 1,
-            timer : 60,
+            countDown: 2,
 
             one : RandomWords({exactly: 60, min: 3, maxLength: 5}),
             two : RandomWords({exactly: 60, min: 4, maxLength: 9}),
@@ -22,7 +25,8 @@ export default class Main extends React.Component{
 
             word: ""
         };
-        this.onSpaceHandler = this.onSpaceHandler.bind(this)
+        this.onSpaceHandler = this.onSpaceHandler.bind(this);
+        this.endStage = this.endStage.bind(this)
     }
 
     componentDidMount() {
@@ -37,6 +41,32 @@ export default class Main extends React.Component{
         }else{
             this.setState({word: this.state.five[0]});
         }
+    }
+
+    timer = () => {
+        this.interval = setInterval(() => {
+            this.setState(prevState => ({
+                countDown: prevState.countDown - 1,
+            }), () => {
+                if (this.state.countDown === 0) {
+                    this.stopCountDown();
+                }
+            });
+        }, 1000)
+    }
+
+    stopCountDown = () => {
+        clearInterval(this.interval);
+        this.endStage()
+    }
+
+    endStage(){
+        this.setState({start: false, buttonclass: "show-button", countDown: 3})
+    }
+
+    startGame(){
+        this.setState({start: true, buttonclass: "hide-button"});
+        this.timer();
     }
 
     onSpaceHandler(){
@@ -76,14 +106,11 @@ export default class Main extends React.Component{
     }
 
   render(){
-
     return(
         <div className="container">
             <h1 className="game-title">Swim Merdeaf Swim!</h1>
             <div className="row">
-                <div className="timer">
-                    {this.state.timer}
-                </div>
+                {this.state.countDown}
             </div>
             <div className="row">
                 <div className="score">
@@ -94,7 +121,7 @@ export default class Main extends React.Component{
                 <DisplayWord word={this.state.word}/>
             </div>
             <div>
-                <button>Start Level</button>
+                <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start Level</button>
             </div>
             <div className="row">
                 <Input onSpaceHandler={this.onSpaceHandler} />
@@ -106,7 +133,6 @@ export default class Main extends React.Component{
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-
     <Main />,
     document.body.appendChild(document.createElement('div')),
   )
