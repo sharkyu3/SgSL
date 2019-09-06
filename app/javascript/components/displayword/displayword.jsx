@@ -39,6 +39,7 @@ export default class DisplayWord extends React.Component{
         }
 
         if (array.length > 0) {
+            let imgWidth = (90/array.length)+"%";
             imageDisplay = array.map((image, index) => {
                 return <img src={image} className="alphabets" key={index}/>
             })

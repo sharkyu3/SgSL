@@ -20,15 +20,15 @@
     },
     "merdeaf": {
       "js": [
-        "/packs/js/merdeaf-04e63fdbffec57c41450.js"
+        "/packs/js/merdeaf-1b3870a81160f74e064f.js"
       ],
       "js.map": [
-        "/packs/js/merdeaf-04e63fdbffec57c41450.js.map"
+        "/packs/js/merdeaf-1b3870a81160f74e064f.js.map"
       ]
     }
   },
   "hello_react.js": "/packs/js/hello_react-8bc063607bb66ccfd83a.js",
   "hello_react.js.map": "/packs/js/hello_react-8bc063607bb66ccfd83a.js.map",
-  "merdeaf.js": "/packs/js/merdeaf-04e63fdbffec57c41450.js",
-  "merdeaf.js.map": "/packs/js/merdeaf-04e63fdbffec57c41450.js.map"
+  "merdeaf.js": "/packs/js/merdeaf-1b3870a81160f74e064f.js",
+  "merdeaf.js.map": "/packs/js/merdeaf-1b3870a81160f74e064f.js.map"
 }
