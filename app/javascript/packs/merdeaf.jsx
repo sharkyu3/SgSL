@@ -28,21 +28,7 @@ export default class Main extends React.Component{
             word: ""
         };
         this.onSpaceHandler = this.onSpaceHandler.bind(this);
-        this.endStage = this.endStage.bind(this)
-    }
-
-    componentDidMount() {
-        if(this.state.stage === 1){
-            this.setState({word: this.state.one[0]});
-        }else if (this.state.stage === 2){
-            this.setState({word: this.state.two[0]});
-        }else if (this.state.stage === 3){
-            this.setState({word: this.state.three[0]});
-        }else if (this.state.state === 4){
-            this.setState({word: this.state.four[0]});
-        }else{
-            this.setState({word: this.state.five[0]});
-        }
+        this.endStage = this.endStage.bind(this);
     }
 
     timer = () => {
@@ -63,12 +49,30 @@ export default class Main extends React.Component{
     }
 
     endStage(){
-        this.setState({start: false, buttonclass: "show-button", countDown: 3, divclass: "show-div"})
+        this.setState({start: false, buttonclass: "show-button", countDown: 15, divclass: "show-div"})
+        if(this.state.stage < 5){
+            let newStage = this.state.stage + 1;
+            this.setState({stage: newStage})
+        }else if(this.state.stage === 5){
+            console.log("end game")
+        }
     }
 
     startGame(){
+        console.log("start: ", this.state.stage);
         this.setState({start: true, buttonclass: "hide-button", divclass: "hide-div"});
         this.timer();
+        if(this.state.stage === 1){
+            this.setState({word: this.state.one[0]});
+        }else if (this.state.stage === 2){
+            this.setState({word: this.state.two[0]});
+        }else if (this.state.stage === 3){
+            this.setState({word: this.state.three[0]});
+        }else if (this.state.state === 4){
+            this.setState({word: this.state.four[0]});
+        }else{
+            this.setState({word: this.state.five[0]});
+        }
     }
 
     onSpaceHandler(){
@@ -111,7 +115,7 @@ export default class Main extends React.Component{
     return(
         <div className="container">
             <h1 className="game-title">Swim Merdeaf Swim!</h1>
-            <div class={this.state.divclass}>
+            <div className={this.state.divclass}>
                 End of level! Click on the button to start next level!
             </div>
             <div className="row">
@@ -129,7 +133,7 @@ export default class Main extends React.Component{
                 <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start</button>
             </div>
             <div>
-                <Input onSpaceHandler={this.onSpaceHandler} />
+                <Input onSpaceHandler={this.onSpaceHandler} stage={this.state.stage}/>
             </div>
             <div>
                 <img src={this.state.url}/>
