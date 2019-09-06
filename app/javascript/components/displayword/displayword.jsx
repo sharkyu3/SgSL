@@ -31,7 +31,6 @@ export default class DisplayWord extends React.Component{
             let splitword = letters.map((letter, index)=>{
                 let splitalphabets = this.state.alphabets.map(alphabets => {
                     if(alphabets.name.toLowerCase() === letter){
-                        console.log(alphabets.link);
                         array.push(alphabets.link)
                     }
                 })
@@ -49,7 +48,6 @@ export default class DisplayWord extends React.Component{
         return(
             <div>
                 <div className="img-holder">{imageDisplay}</div>
-                <button>Start Level</button>
             </div>
             )
     }

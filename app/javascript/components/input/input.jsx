@@ -14,8 +14,8 @@ export default class Input extends React.Component{
     onSpace(){
         if (event.key === " "){
             console.log("detected space in input component");
-            this.setState({input: ""});
             this.props.onSpaceHandler()
+            this.setState({input: ""});
         }
     }
 

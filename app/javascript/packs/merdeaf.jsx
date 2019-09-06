@@ -41,10 +41,30 @@ export default class Main extends React.Component{
 
     onSpaceHandler(){
         if (event.key === " "){
-            if(this.state.word === event.target.value){
-                console.log("score points!")
+            if(this.state.word === event.target.value.trim()){
                 let newScore = this.state.score + 10;
-                this.setState({score: newScore})
+                this.setState({score: newScore});
+                if (this.state.stage === 1){
+                    this.state.one.shift();
+                    this.setState({word: this.state.one[0]});
+                    console.log(this.state.one)
+                }else if (this.state.stage === 2){
+                    this.state.two.shift();
+                    this.setState({word: this.state.two[0]});
+                    console.log(this.state.two)
+                }else if (this.state.stage === 3){
+                    this.state.three.shift();
+                    this.setState({word: this.state.three[0]});
+                    console.log(this.state.three)
+                }else if (this.state.state === 4){
+                    this.state.four.shift();
+                    this.setState({word: this.state.four[0]});
+                    console.log(this.state.four)
+                }else{
+                    this.state.five.shift();
+                    this.setState({word: this.state.five[0]});
+                    console.log(this.state.five)
+                }
             }else{
                 console.log("WRONG!")
                 if(this.state.score > 0){
@@ -56,29 +76,25 @@ export default class Main extends React.Component{
     }
 
   render(){
-    console.log(this.state.word);
-    if(this.state.stage === 1){
-        var word = this.state.one[0];
-    }else if (this.state.stage === 2){
-        var word = this.state.two[0];
-    }else if (this.state.stage === 3){
-        var word = this.state.three[0];
-    }else if (this.state.state === 4){
-        var word = this.state.four[0];
-    }else{
-        var word = this.state.five[0];
-    }
 
     return(
         <div className="container">
             <h1 className="game-title">Swim Merdeaf Swim!</h1>
+            <div className="row">
+                <div className="timer">
+                    {this.state.timer}
+                </div>
+            </div>
             <div className="row">
                 <div className="score">
                     {this.state.score}
                 </div>
             </div>
             <div className="row">
-                <DisplayWord word={word}/>
+                <DisplayWord word={this.state.word}/>
+            </div>
+            <div>
+                <button>Start Level</button>
             </div>
             <div className="row">
                 <Input onSpaceHandler={this.onSpaceHandler} />
