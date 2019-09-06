@@ -39,8 +39,8 @@ export default class DisplayWord extends React.Component{
         }
 
         if (array.length > 0) {
-            imageDisplay = array.map(image => {
-                return <img src={image} className="alphabets"/>
+            imageDisplay = array.map((image, index) => {
+                return <img src={image} className="alphabets" key={index}/>
             })
         }
 

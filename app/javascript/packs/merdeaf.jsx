@@ -13,9 +13,10 @@ export default class Main extends React.Component{
             start: false,
             buttonclass: "show-button",
             divclass: "hide-div",
+            scoreclass: "hide-div",
             name: "",
             score : 0,
-            stage : 1,
+            stage : 4,
             countDown: 15,
             url: '/assets/main.png',
 
@@ -55,7 +56,8 @@ export default class Main extends React.Component{
             let newStage = this.state.stage + 1;
             this.setState({stage: newStage})
         }else if(this.state.stage === 5){
-            console.log("end game")
+            console.log("end game");
+            this.setState({scoreclass: "show-div"})
         }
     }
 
@@ -106,9 +108,10 @@ export default class Main extends React.Component{
                 }
                 this.setState({url:"/assets/good.png"});
             }else{
+                this.setState({url: "/assets/alamak.png"})
                 if(this.state.score > 0 && this.state.start === true){
                     let newScore = this.state.score - 5;
-                    this.setState({score: newScore, url: "/assets/alamak.png"})
+                    this.setState({score: newScore})
                 }
             }
         }
@@ -119,7 +122,11 @@ export default class Main extends React.Component{
         <div className="container">
             <h1 className="game-title">Swim Merdeaf Swim!</h1>
             <div className={this.state.divclass}>
-                End of level! Click on the button to start next level!
+                End of level! Press the SPACE BAR to start the next level!
+            </div>
+            <div className={this.state.scoreclass}>
+                <h3>GAME OVER!</h3>
+                <h4>{this.state.score}</h4>
             </div>
             <div className="row">
                 {this.state.countDown}
@@ -130,7 +137,7 @@ export default class Main extends React.Component{
                 </div>
             </div>
             <div>
-                <DisplayWord word={this.state.word}/>
+                <DisplayWord word={this.state.word} stage={this.state.stage}/>
             </div>
             <div>
                 <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start</button>
