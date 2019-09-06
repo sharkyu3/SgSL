@@ -31,3 +31,29 @@
  .hide-div{
  	display: none;
  }
+
+ .alphabets-slow{
+ 	border-radius: 10px;
+ 	width:11%;
+ 	margin: 5px;
+ }
+
+ .alphabets-med{
+ 	border-radius: 10px;
+ 	width:11%;
+ 	margin: 5px;
+ }
+
+ .alphabets-fast{
+ 	border-radius: 10px;
+ 	width:11%;
+ 	margin: 5px;
+ }
+
+ .img-holder{
+ 	text-align: center;
+ }
+
+ .input-holder{
+ 	text-align: center;
+ }

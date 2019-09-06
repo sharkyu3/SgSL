@@ -17,21 +17,44 @@ export default class Main extends React.Component{
             picclass:"hide-div",
             name: "",
             score : 0,
-            stage : 4,
-            countDown: 60,
+            stage : 5,
+            countDown: 3,
             url: '/assets/main.png',
 
-            one : RandomWords({exactly: 60, min: 3, maxLength: 5}),
-            two : RandomWords({exactly: 60, min: 4, maxLength: 8}),
-            three : RandomWords({exactly: 60, min: 3, maxLength: 6}),
-            four : RandomWords({exactly: 60, min: 8, maxLength: 8}),
-            five : RandomWords({exactly: 60, min: 5, maxLength: 8}),
+            one : RandomWords({exactly: 60, maxLength: 5}),
+            two : RandomWords({exactly: 60, maxLength: 8}),
+            three : RandomWords({exactly: 60, maxLength: 6}),
+            four : RandomWords({exactly: 60, maxLength: 8}),
+            five : RandomWords({exactly: 60, maxLength: 8}),
 
             word: ""
         };
         this.onSpaceHandler = this.onSpaceHandler.bind(this);
         this.endStage = this.endStage.bind(this);
         this.startGame = this.startGame.bind(this)
+    }
+
+    logScore(){
+        if (event.key === " "){
+            var data = {
+                name: event.target.value,
+                score: this.state.score
+            }
+
+            var request = new XMLHttpRequest();
+
+            request.addEventListener("load", function(){
+                console.log("done logging score");
+                const responseData = JSON.parse(this.responseText);
+                console.log(responseData);
+            })
+
+            request.open("POST", '/merdeaf_scores');
+            request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            request.send(JSON.stringify(data));
+
+            console.log("inside log score", data);
+        }
     }
 
     timer = () => {
@@ -139,7 +162,8 @@ export default class Main extends React.Component{
             <div className={this.state.scoreclass}>
                 <h3>GAME OVER!</h3>
                 <h4>{this.state.score}</h4>
-                <input placeholder="enter your name"/>
+                <p>Enter your name and press the SPACE BAR to log your score</p>
+                <input placeholder="enter your name" onKeyDown={()=>{this.logScore()}}/>
             </div>
             <div className="row">
                 {this.state.countDown}
@@ -153,7 +177,7 @@ export default class Main extends React.Component{
             <div>
                 <DisplayWord word={this.state.word} stage={this.state.stage}/>
             </div>
-            <div>
+            <div className = "input-holder">
                 <Input onSpaceHandler={this.onSpaceHandler} start={this.state.start} startgame={this.startGame}/>
             </div>
             <div>
