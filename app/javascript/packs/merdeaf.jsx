@@ -12,10 +12,12 @@ export default class Main extends React.Component{
         this.state = {
             start: false,
             buttonclass: "show-button",
+            divclass: "hide-div",
             name: "",
             score : 0,
             stage : 1,
-            countDown: 2,
+            countDown: 15,
+            url: '/assets/main.png',
 
             one : RandomWords({exactly: 60, min: 3, maxLength: 5}),
             two : RandomWords({exactly: 60, min: 4, maxLength: 9}),
@@ -61,11 +63,11 @@ export default class Main extends React.Component{
     }
 
     endStage(){
-        this.setState({start: false, buttonclass: "show-button", countDown: 3})
+        this.setState({start: false, buttonclass: "show-button", countDown: 3, divclass: "show-div"})
     }
 
     startGame(){
-        this.setState({start: true, buttonclass: "hide-button"});
+        this.setState({start: true, buttonclass: "hide-button", divclass: "hide-div"});
         this.timer();
     }
 
@@ -73,7 +75,7 @@ export default class Main extends React.Component{
         if (event.key === " "){
             if(this.state.word === event.target.value.trim()){
                 let newScore = this.state.score + 10;
-                this.setState({score: newScore});
+                this.setState({score: newScore, url:"/assets/good.png"});
                 if (this.state.stage === 1){
                     this.state.one.shift();
                     this.setState({word: this.state.one[0]});
@@ -99,7 +101,7 @@ export default class Main extends React.Component{
                 console.log("WRONG!")
                 if(this.state.score > 0){
                     let newScore = this.state.score - 5;
-                    this.setState({score: newScore})
+                    this.setState({score: newScore, url: "/assets/alamak.png"})
                 }
             }
         }
@@ -109,6 +111,9 @@ export default class Main extends React.Component{
     return(
         <div className="container">
             <h1 className="game-title">Swim Merdeaf Swim!</h1>
+            <div class={this.state.divclass}>
+                End of level! Click on the button to start next level!
+            </div>
             <div className="row">
                 {this.state.countDown}
             </div>
@@ -117,14 +122,17 @@ export default class Main extends React.Component{
                     {this.state.score}
                 </div>
             </div>
-            <div className="row">
+            <div>
                 <DisplayWord word={this.state.word}/>
             </div>
             <div>
-                <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start Level</button>
+                <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start</button>
             </div>
-            <div className="row">
+            <div>
                 <Input onSpaceHandler={this.onSpaceHandler} />
+            </div>
+            <div>
+                <img src={this.state.url}/>
             </div>
         </div>
          );
