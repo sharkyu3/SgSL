@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import RandomWords from 'random-words'
-import Input from '../components/input/input';
-import DisplayWord from '../components/displayword/displayword';
+import Input from '../components/input/input'
+import DisplayWord from '../components/displayword/displayword'
 
 
 export default class Main extends React.Component{
