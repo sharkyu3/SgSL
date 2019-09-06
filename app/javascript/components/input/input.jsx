@@ -13,15 +13,16 @@ export default class Input extends React.Component{
 
     componentDidUpdate(prevProps){
         if(this.props.start !== prevProps.start){
-            console.log("input component stage change: ", this.props.start);
             this.setState({input: ""})
         }
     }
 
     onSpace(){
-        if (event.key === " "){
+        if (event.key === " " && this.props.start === true){
             this.props.onSpaceHandler()
             this.setState({input: ""});
+        }else if(event.key === " " && this.props.start === false){
+            this.props.startgame()
         }
     }
 

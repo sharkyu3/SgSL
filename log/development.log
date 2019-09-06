@@ -12960,3 +12960,59 @@ Processing by GamesController#merdeaf as JSON
 Completed 200 OK in 15ms (Views: 3.6ms | ActiveRecord: 10.9ms)
 
 
+Started GET "/games/merdeaf" for ::1 at 2019-09-06 16:19:28 +0800
+Processing by GamesController#merdeaf as HTML
+  Rendering games/merdeaf.html.erb within layouts/application
+  Rendered games/merdeaf.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 46ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/merdeaf.json" for ::1 at 2019-09-06 16:19:29 +0800
+Processing by GamesController#merdeaf as JSON
+  [1m[36mAlphabet Load (0.4ms)[0m  [1m[34mSELECT "alphabets".* FROM "alphabets"[0m
+  ↳ app/controllers/games_controller.rb:9
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/games/merdeaf" for ::1 at 2019-09-06 16:21:05 +0800
+Processing by GamesController#merdeaf as HTML
+  Rendering games/merdeaf.html.erb within layouts/application
+  Rendered games/merdeaf.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/merdeaf.json" for ::1 at 2019-09-06 16:21:05 +0800
+Processing by GamesController#merdeaf as JSON
+  [1m[36mAlphabet Load (1.1ms)[0m  [1m[34mSELECT "alphabets".* FROM "alphabets"[0m
+  ↳ app/controllers/games_controller.rb:9
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/games/merdeaf" for ::1 at 2019-09-06 16:21:18 +0800
+Processing by GamesController#merdeaf as HTML
+  Rendering games/merdeaf.html.erb within layouts/application
+  Rendered games/merdeaf.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/merdeaf.json" for ::1 at 2019-09-06 16:21:19 +0800
+Processing by GamesController#merdeaf as JSON
+  [1m[36mAlphabet Load (3.2ms)[0m  [1m[34mSELECT "alphabets".* FROM "alphabets"[0m
+  ↳ app/controllers/games_controller.rb:9
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/games/merdeaf" for ::1 at 2019-09-06 16:22:07 +0800
+Processing by GamesController#merdeaf as HTML
+  Rendering games/merdeaf.html.erb within layouts/application
+  Rendered games/merdeaf.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/merdeaf.json" for ::1 at 2019-09-06 16:22:08 +0800
+Processing by GamesController#merdeaf as JSON
+  [1m[36mAlphabet Load (2.2ms)[0m  [1m[34mSELECT "alphabets".* FROM "alphabets"[0m
+  ↳ app/controllers/games_controller.rb:9
+Completed 200 OK in 50ms (Views: 47.4ms | ActiveRecord: 2.2ms)
+
+

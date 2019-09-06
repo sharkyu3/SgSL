@@ -29,6 +29,7 @@ export default class Main extends React.Component{
         };
         this.onSpaceHandler = this.onSpaceHandler.bind(this);
         this.endStage = this.endStage.bind(this);
+        this.startGame = this.startGame.bind(this)
     }
 
     timer = () => {
@@ -49,7 +50,7 @@ export default class Main extends React.Component{
     }
 
     endStage(){
-        this.setState({start: false, buttonclass: "show-button", countDown: 15, divclass: "show-div"})
+        this.setState({start: false, countDown: 15, divclass: "show-div"})
         if(this.state.stage < 5){
             let newStage = this.state.stage + 1;
             this.setState({stage: newStage})
@@ -59,7 +60,6 @@ export default class Main extends React.Component{
     }
 
     startGame(){
-        console.log("start: ", this.state.stage);
         this.setState({start: true, buttonclass: "hide-button", divclass: "hide-div"});
         this.timer();
         if(this.state.stage === 1){
@@ -136,7 +136,7 @@ export default class Main extends React.Component{
                 <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start</button>
             </div>
             <div>
-                <Input onSpaceHandler={this.onSpaceHandler} start={this.state.start}/>
+                <Input onSpaceHandler={this.onSpaceHandler} start={this.state.start} startgame={this.startGame}/>
             </div>
             <div>
                 <img src={this.state.url}/>
