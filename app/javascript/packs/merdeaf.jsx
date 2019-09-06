@@ -77,33 +77,36 @@ export default class Main extends React.Component{
 
     onSpaceHandler(){
         if (event.key === " "){
-            if(this.state.word === event.target.value.trim()){
-                let newScore = this.state.score + 10;
-                this.setState({score: newScore, url:"/assets/good.png"});
+            if(this.state.word === event.target.value.trim() && this.state.start === true){
                 if (this.state.stage === 1){
                     this.state.one.shift();
-                    this.setState({word: this.state.one[0]});
+                    let newScore = this.state.score + 10;
+                    this.setState({word: this.state.one[0], score: newScore});
                     console.log(this.state.one)
                 }else if (this.state.stage === 2){
                     this.state.two.shift();
-                    this.setState({word: this.state.two[0]});
+                    let newScore = this.state.score + 12;
+                    this.setState({word: this.state.two[0], score: newScore});
                     console.log(this.state.two)
                 }else if (this.state.stage === 3){
                     this.state.three.shift();
-                    this.setState({word: this.state.three[0]});
+                    let newScore = this.state.score + 14;
+                    this.setState({word: this.state.three[0], score: newScore});
                     console.log(this.state.three)
                 }else if (this.state.state === 4){
                     this.state.four.shift();
-                    this.setState({word: this.state.four[0]});
+                    let newScore = this.state.score + 16;
+                    this.setState({word: this.state.four[0], score: newScore});
                     console.log(this.state.four)
                 }else{
                     this.state.five.shift();
-                    this.setState({word: this.state.five[0]});
+                    let newScore = this.state.score + 18;
+                    this.setState({word: this.state.five[0], score: newScore});
                     console.log(this.state.five)
                 }
+                this.setState({url:"/assets/good.png"});
             }else{
-                console.log("WRONG!")
-                if(this.state.score > 0){
+                if(this.state.score > 0 && this.state.start === true){
                     let newScore = this.state.score - 5;
                     this.setState({score: newScore, url: "/assets/alamak.png"})
                 }
@@ -133,7 +136,7 @@ export default class Main extends React.Component{
                 <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start</button>
             </div>
             <div>
-                <Input onSpaceHandler={this.onSpaceHandler} stage={this.state.stage}/>
+                <Input onSpaceHandler={this.onSpaceHandler} start={this.state.start}/>
             </div>
             <div>
                 <img src={this.state.url}/>

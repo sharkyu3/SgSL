@@ -12,8 +12,8 @@ export default class Input extends React.Component{
     }
 
     componentDidUpdate(prevProps){
-        console.log("inside input component: ", this.props.stage);
-        if(this.props.stage !== prevProps.stage){
+        if(this.props.start !== prevProps.start){
+            console.log("input component stage change: ", this.props.start);
             this.setState({input: ""})
         }
     }
