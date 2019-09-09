@@ -19100,3 +19100,114 @@ Processing by WordsController#show as HTML
 Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2019-09-09 13:20:34 +0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words" for ::1 at 2019-09-09 13:20:43 +0800
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.9ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:15
+  Rendered words/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/words" for ::1 at 2019-09-09 13:22:12 +0800
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:15
+  Rendered words/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/words" for ::1 at 2019-09-09 13:22:19 +0800
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:15
+  Rendered words/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/words" for ::1 at 2019-09-09 13:22:29 +0800
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:15
+  Rendered words/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/words" for ::1 at 2019-09-09 13:22:38 +0800
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:14
+  Rendered words/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/words/1" for ::1 at 2019-09-09 13:22:40 +0800
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/words/1" for ::1 at 2019-09-09 13:23:10 +0800
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/words/1" for ::1 at 2019-09-09 13:23:50 +0800
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/words/1" for ::1 at 2019-09-09 13:25:01 +0800
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/words" for ::1 at 2019-09-09 13:25:17 +0800
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words"[0m
+  ↳ app/views/words/index.html.erb:14
+  Rendered words/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 26ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/words/3" for ::1 at 2019-09-09 13:25:19 +0800
+Processing by WordsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:67
+  Rendering words/show.html.erb within layouts/application
+  Rendered words/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.7ms)
+
+
