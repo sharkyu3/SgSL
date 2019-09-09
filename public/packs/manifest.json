@@ -1,15 +1,15 @@
 {
-  "alphabets.js": "/packs/js/alphabets-26bb2c1a249a30630f88.js",
-  "alphabets.js.map": "/packs/js/alphabets-26bb2c1a249a30630f88.js.map",
+  "alphabets.js": "/packs/js/alphabets-8db5b3925e830dba5621.js",
+  "alphabets.js.map": "/packs/js/alphabets-8db5b3925e830dba5621.js.map",
   "application.js": "/packs/js/application-3bfd7fdc9edcbd1aace3.js",
   "application.js.map": "/packs/js/application-3bfd7fdc9edcbd1aace3.js.map",
   "entrypoints": {
     "alphabets": {
       "js": [
-        "/packs/js/alphabets-26bb2c1a249a30630f88.js"
+        "/packs/js/alphabets-8db5b3925e830dba5621.js"
       ],
       "js.map": [
-        "/packs/js/alphabets-26bb2c1a249a30630f88.js.map"
+        "/packs/js/alphabets-8db5b3925e830dba5621.js.map"
       ]
     },
     "application": {
@@ -38,10 +38,10 @@
     },
     "numbers": {
       "js": [
-        "/packs/js/numbers-0e33344d751dce552938.js"
+        "/packs/js/numbers-693ca2dc0b4bc8d2427a.js"
       ],
       "js.map": [
-        "/packs/js/numbers-0e33344d751dce552938.js.map"
+        "/packs/js/numbers-693ca2dc0b4bc8d2427a.js.map"
       ]
     },
     "sudoku": {
@@ -65,8 +65,8 @@
   "hello_react.js.map": "/packs/js/hello_react-0733c71806e8c8dec5a4.js.map",
   "merdeaf.js": "/packs/js/merdeaf-156afec3fa8eab9f8fbb.js",
   "merdeaf.js.map": "/packs/js/merdeaf-156afec3fa8eab9f8fbb.js.map",
-  "numbers.js": "/packs/js/numbers-0e33344d751dce552938.js",
-  "numbers.js.map": "/packs/js/numbers-0e33344d751dce552938.js.map",
+  "numbers.js": "/packs/js/numbers-693ca2dc0b4bc8d2427a.js",
+  "numbers.js.map": "/packs/js/numbers-693ca2dc0b4bc8d2427a.js.map",
   "sudoku.js": "/packs/js/sudoku-076042915e399ef1705f.js",
   "sudoku.js.map": "/packs/js/sudoku-076042915e399ef1705f.js.map",
   "wordsearch.js": "/packs/js/wordsearch-1d6b5d163cac7d78d379.js",

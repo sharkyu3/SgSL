@@ -33,11 +33,9 @@ export default class Alphabets extends React.Component{
     }
 
     render(){
-        console.log("rendering: ", this.state.info)
         let url = ""
         if (this.state.info !== undefined){
             url = this.state.info.link
-            console.log("render: ", url)
         }
 
         return(
