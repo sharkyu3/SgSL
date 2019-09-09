@@ -12,13 +12,16 @@ export default class Main extends React.Component{
         this.state = {
             start: false,
             buttonclass: "show-button",
-            divclass: "hide-div",
-            scoreclass: "hide-div",
-            picclass:"hide-div",
+            divclass: "hide",
+            scoreclass: "hide",
+            picclass:"hide",
+            timerclass: "col-6 timer hide",
+            scoringclass: "col score hide",
+            inputclass: "input-holder hide",
             name: "",
             score : 0,
-            stage : 5,
-            countDown: 2,
+            stage : 3,
+            countDown: 15,
             url: '/assets/main.png',
 
             one : RandomWords({exactly: 60, maxLength: 5}),
@@ -84,12 +87,12 @@ export default class Main extends React.Component{
             this.setState({stage: newStage})
         }else if(this.state.stage === 5){
             console.log("end game");
-            this.setState({scoreclass: "show-div", url: "/assets/hooray.png", picclass: "hide-div"})
+            this.setState({scoreclass: "show-div", url: "/assets/hooray.png", picclass: "hide"})
         }
     }
 
     startGame(){
-        this.setState({start: true, buttonclass: "hide-button", divclass: "hide-div", picclass: "hide-div"});
+        this.setState({start: true, buttonclass: "hide", divclass: "hide", picclass: "hide", timerclass:"show", inputclass: "input-holder"});
         this.timer();
         if(this.state.stage === 1){
             this.setState({word: this.state.one[0]});
@@ -151,36 +154,51 @@ export default class Main extends React.Component{
 
   render(){
     return(
-        <div className="container">
-            <h1 className="game-title">Swim Merdeaf Swim!</h1>
-            <div>
-                <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start</button>
+        <div className="container-fluid">
+            <h1 className="game-title">type TYPE <b>TYPE!!!</b></h1>
+            <h5 className={this.state.buttonclass}>Read the fingerspell alphabets and key in the word. Hit the SPACE BAR after each word.</h5>
+            <div className="game-title">
+                <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start game!</button>
             </div>
-            <div className={this.state.divclass}>
-                End of level! Press the SPACE BAR to start the next level!
+
+            <div className="msg-holder">
+                <div className={this.state.divclass}>
+                    End of level! Press the SPACE BAR to start the next level!
+                </div>
+                <div className={this.state.scoreclass}>
+                    <h3>GAME OVER!</h3>
+                    <h4>{this.state.score}</h4>
+                    <p>Enter your name and press the SPACE BAR to log your score</p>
+                    <input placeholder="enter your name" onKeyDown={()=>{this.logScore()}}/>
+                </div>
             </div>
-            <div className={this.state.scoreclass}>
-                <h3>GAME OVER!</h3>
-                <h4>{this.state.score}</h4>
-                <p>Enter your name and press the SPACE BAR to log your score</p>
-                <input placeholder="enter your name" onKeyDown={()=>{this.logScore()}}/>
+
+            <div className="row countdown">
+                <div className={this.state.timerclass}>
+                    {this.state.countDown}s
+                </div>
+                <div>
+                    <img src="/assets/hurry.png" className={this.state.picclass} height='80px'/>
+                </div>
             </div>
+
             <div className="row">
-                {this.state.countDown}
-                <img src="/assets/hurry.png" className={this.state.picclass}/>
-            </div>
-            <div className="row">
-                <div className="score">
-                    {this.state.score}
+                <div className={this.state.scoringclass}>
+                    <div>
+                        Score:
+                    </div>
+                    <div className="score-holder">
+                        {this.state.score}
+                    </div>
                 </div>
             </div>
             <div>
                 <DisplayWord word={this.state.word} stage={this.state.stage}/>
             </div>
-            <div className = "input-holder">
+            <div className = {this.state.inputclass}>
                 <Input onSpaceHandler={this.onSpaceHandler} start={this.state.start} startgame={this.startGame}/>
             </div>
-            <div>
+            <div className = "merdeaf-holder">
                 <img src={this.state.url}/>
             </div>
         </div>

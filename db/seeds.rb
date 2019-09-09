@@ -78,8 +78,8 @@ words_list = [
 ]
 
 # lessons_list = [
-#   ["Alphabets", "https://youtu.be/Xx3fgCP_5sk", 1],
-#   ["Numbers", "https://youtu.be/TtTtGEpZyjM", 1]
+#   ["Alphabets", "https://www.youtube.com/embed/Xx3fgCP_5sk", 1],
+#   ["Numbers", "https://www.youtube.com/embed/TtTtGEpZyjM", 1]
 # ]
 
 # lessons_list.each do |name, link, user_id|
