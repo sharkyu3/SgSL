@@ -20,10 +20,10 @@
     },
     "merdeaf": {
       "js": [
-        "/packs/js/merdeaf-5ee3a0758eef21a9a214.js"
+        "/packs/js/merdeaf-058b0a59166f12e95b58.js"
       ],
       "js.map": [
-        "/packs/js/merdeaf-5ee3a0758eef21a9a214.js.map"
+        "/packs/js/merdeaf-058b0a59166f12e95b58.js.map"
       ]
     },
     "sudoku": {
@@ -45,8 +45,8 @@
   },
   "hello_react.js": "/packs/js/hello_react-8bc063607bb66ccfd83a.js",
   "hello_react.js.map": "/packs/js/hello_react-8bc063607bb66ccfd83a.js.map",
-  "merdeaf.js": "/packs/js/merdeaf-5ee3a0758eef21a9a214.js",
-  "merdeaf.js.map": "/packs/js/merdeaf-5ee3a0758eef21a9a214.js.map",
+  "merdeaf.js": "/packs/js/merdeaf-058b0a59166f12e95b58.js",
+  "merdeaf.js.map": "/packs/js/merdeaf-058b0a59166f12e95b58.js.map",
   "sudoku.js": "/packs/js/sudoku-7e96bd73654594755fa1.js",
   "sudoku.js.map": "/packs/js/sudoku-7e96bd73654594755fa1.js.map",
   "wordsearch.js": "/packs/js/wordsearch-9945902c5f53d9a949eb.js",

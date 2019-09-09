@@ -18,7 +18,7 @@ export default class Main extends React.Component{
             name: "",
             score : 0,
             stage : 5,
-            countDown: 3,
+            countDown: 2,
             url: '/assets/main.png',
 
             one : RandomWords({exactly: 60, maxLength: 5}),
@@ -40,13 +40,13 @@ export default class Main extends React.Component{
                 name: event.target.value,
                 score: this.state.score
             }
+            console.log(data)
 
             var request = new XMLHttpRequest();
 
             request.addEventListener("load", function(){
                 console.log("done logging score");
-                const responseData = JSON.parse(this.responseText);
-                console.log(responseData);
+                window.location.href = "/merdeaf_scores";
             })
 
             request.open("POST", '/merdeaf_scores');
@@ -189,6 +189,7 @@ export default class Main extends React.Component{
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("DOM LOADED")
   ReactDOM.render(
     <Main />,
     document.body.appendChild(document.createElement('div')),

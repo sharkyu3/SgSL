@@ -1,10 +1,11 @@
 class MerdeafScoresController < ApplicationController
   before_action :set_merdeaf_score, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /merdeaf_scores
   # GET /merdeaf_scores.json
   def index
-    @merdeaf_scores = MerdeafScore.all
+    @merdeaf_scores = MerdeafScore.all.order('score DESC')
   end
 
   # GET /merdeaf_scores/1
