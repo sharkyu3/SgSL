@@ -15,6 +15,28 @@
   </head>
 
   <body>
+  	<nav class="navbar transparent navbar-expand-lg navbar-light">
+  		<div id="nav_logo">
+        <%= link_to image_tag("logo.png", class:"logo"), "/"%>
+    	</div>
+
+    	<div class="collapse navbar-collapse navbar-right col-2  " id="navbarText">
+		    <ul class="navbar-nav mr-auto">
+
+		        <li class="nav-item">
+		            <a class="nav-link" href="/lessons/index">Lessons</a>
+		        </li>
+		        <li class="nav-item">
+		            <a class="nav-link" href="/games/index">Games</a>
+		        </li>
+		        <li class="nav-item">
+		            <a class="nav-link" href="/words">Word Bank</a>
+		        </li>
+		    </ul>
+		</div>
+
+  	</nav>
+
     <%= yield %>
   </body>
 </html>

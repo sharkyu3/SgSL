@@ -4,7 +4,22 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
+  end
 
+  def alphabets
+    @lessons = Lesson.find(1)
+    respond_to do |format|
+      format.html { render :alphabets }
+      format.json { render json: @lessons }
+    end
+  end
+
+  def numbers
+    @lessons = Lesson.find(2)
+    respond_to do |format|
+      format.html { render :numbers }
+      format.json { render json: @lessons }
+    end
   end
 
   # GET /lessons/1
