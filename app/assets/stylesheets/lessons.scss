@@ -1,3 +1,13 @@
 // Place all the styles related to the Lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ #videoElement {
+	width: 560px;
+	height: 340px;
+	background-color: #666;
+}
+
+.vids {
+	margin-top: 30px
+}

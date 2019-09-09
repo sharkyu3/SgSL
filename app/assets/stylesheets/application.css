@@ -14,8 +14,42 @@
  *= require_self
  */
 
+  body{
+  	font-family: 'Arimo', sans-serif;
+  }
+
+  /* DEFAULT CSS */
+
+  .navbar{
+  	height:65px;
+  	background-color: #fb8200;
+  	padding: 0px;
+  	margin-bottom: 30px
+  }
+
+  .nav{
+  	font-family: 'Arimo', sans-serif;
+  	font-size: 125%;
+  	font-weight: bold;
+  	position: absolute;
+  	right: 0;
+  	top: 25%;
+  }
+
+  li{
+  	margin-left: 10px;
+  	margin-right: 10px;
+  	background-color: #f9dccb;
+  	height: 35px;
+  	border-radius: 7px;
+  	padding: 10px;
+  }
+
+ /* MERDEAF CSS */
+
  .game-title{
  	color:blue;
+ 	font-family: 'Arimo', sans-serif;
  }
 
  .alphabets{
@@ -57,9 +91,3 @@
  .input-holder{
  	text-align: center;
  }
-
- #videoElement {
-	width: 560px;
-	height: 340px;
-	background-color: #666;
-}

@@ -39,13 +39,16 @@ export default class Numbers extends React.Component{
         }
 
         return(
-            <div>
-                <h1>Alphabets Lesson</h1>
-                <div className="video-container">
-                    <iframe width="560" height="340" src={url}></iframe>
-                </div>
-                <div>
-                    <video autoPlay="true" id="videoElement"></video>
+            <div className="container-fluid">
+                <h2>Learn numbers 1 to 20 in SgSL!</h2>
+                <h6>Allow webcam access to practice alongside!</h6>
+                <div className="row vids">
+                    <div className="video-container col-6">
+                        <iframe width="560" height="340" src={url}></iframe>
+                    </div>
+                    <div className="col-6">
+                        <video autoPlay="true" id="videoElement"></video>
+                    </div>
                 </div>
             </div>)
     }

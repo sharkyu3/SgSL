@@ -8,33 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  	<nav class="navbar transparent navbar-expand-lg navbar-light">
-  		<div id="nav_logo">
-        <%= link_to image_tag("logo.png", class:"logo"), "/"%>
-    	</div>
-
-    	<div class="collapse navbar-collapse navbar-right col-2  " id="navbarText">
-		    <ul class="navbar-nav mr-auto">
-
-		        <li class="nav-item">
-		            <a class="nav-link" href="/lessons/index">Lessons</a>
-		        </li>
-		        <li class="nav-item">
-		            <a class="nav-link" href="/games/index">Games</a>
-		        </li>
-		        <li class="nav-item">
-		            <a class="nav-link" href="/words">Word Bank</a>
-		        </li>
-		    </ul>
-		</div>
-
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="/">
+		        <img className="logo" src="/assets/logo.png" height="45px">
+		      </a>
+			      <ul class="nav nav-pills">
+						  <li role="presentation"><a className="links" href="/lessons/index">Lessons</a></li>
+						  <li role="presentation"><a className="links" href="/games/index">Games</a></li>
+						  <li role="presentation"><a className="links" href="/words">Word Bank</a></li>
+						</ul>
+		    </div>
+		  </div>
   	</nav>
 
     <%= yield %>

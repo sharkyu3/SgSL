@@ -4,18 +4,41 @@
 
 
 .banner{
-	background-color: pink;
+	border-radius: 10px;
+	font-family: 'Arimo', sans-serif;
+	border: 2px solid #f9ae6f;
+	margin-bottom: 20px;
+}
+
+.pic{
+	text-align: center
+}
+
+.banner-pic{
+	height: 200px;
+}
+
+.text{
+	padding-top: 5%
+}
+
+.head{
+	font-weight: bold;
+	font-size:350%;
+	color: #525252;
+	margin-bottom: 4%
+}
+
+.caption{
+	font-size: 120%
 }
 
 .card{
+	width: 30%;
+	margin: 10px;
 	display: inline-block;
-	width: 28%;
-}
-
-.card-img-top{
-	height: 100%;
 }
 
 .cards{
-	margin:0 auto;
+	text-align: center
 }
