@@ -56,7 +56,6 @@ export default class Numbers extends React.Component{
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("DOM LOADED")
   ReactDOM.render(
     <Numbers />,
     document.body.appendChild(document.createElement('div')),

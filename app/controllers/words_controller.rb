@@ -4,12 +4,13 @@ class WordsController < ApplicationController
   # GET /words
   # GET /words.json
   def index
-    @words = Word.all
+    @words = Word.all.order('name ASC')
   end
 
   # GET /words/1
   # GET /words/1.json
   def show
+    @word = Word.find(params[:id])
   end
 
   # GET /words/new

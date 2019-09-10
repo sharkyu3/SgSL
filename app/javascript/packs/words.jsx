@@ -7,14 +7,16 @@ export default class Alphabets extends React.Component{
     constructor(){
         super();
         this.state = {
-            info: []
+            info: [],
+            params: null
         }
     }
 
     componentDidMount(){
-        this.getURL();
+        this.setState({params: event.target.URL}, function() {
+            this.getURL()
+        })
         var video = document.querySelector("#videoElement");
-
         if (navigator.mediaDevices.getUserMedia) {
           navigator.mediaDevices.getUserMedia({ video: true })
             .then(function (stream) {
@@ -27,33 +29,33 @@ export default class Alphabets extends React.Component{
     }
 
     getURL(){
-        fetch('/lessons/alphabets.json')
+        var test = this.state.params + ".json"
+        fetch(test)
         .then(res=>res.json())
         .then(result=>this.setState({info: result}));
     }
 
     render(){
         let url = ""
-        if (this.state.info !== undefined){
+        if (this.state.info.link !== undefined){
             url = this.state.info.link
         }
 
         return(
             <div className="container-fluid">
-                <h2>Learn the alphabets in SgSL!</h2>
+                <h2>{this.state.info.name}</h2>
                 <h6>Allow webcam access to practice alongside!</h6>
                 <div className="row vids">
                     <div className="video-container col-6">
-                        <iframe width="560" height="340" src={url}></iframe>
+                        <img src={url}></img>
                     </div>
                     <div className="col-6">
-                        <video autoPlay="true" id="videoElement"></video>
+                        <video autoPlay="{true}" id="videoElement"></video>
                     </div>
                 </div>
             </div>)
     }
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(

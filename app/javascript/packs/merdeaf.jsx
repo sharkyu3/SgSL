@@ -15,13 +15,14 @@ export default class Main extends React.Component{
             divclass: "hide",
             scoreclass: "hide",
             picclass:"hide",
-            timerclass: "col-6 timer hide",
-            scoringclass: "col score hide",
-            inputclass: "input-holder hide",
+            timerclass: "hide",
+            scoringclass: "hide",
+            inputclass: "hide",
+            holderclass: "hide",
             name: "",
             score : 0,
-            stage : 3,
-            countDown: 15,
+            stage : 1,
+            countDown: 45,
             url: '/assets/main.png',
 
             one : RandomWords({exactly: 60, maxLength: 5}),
@@ -55,8 +56,6 @@ export default class Main extends React.Component{
             request.open("POST", '/merdeaf_scores');
             request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             request.send(JSON.stringify(data));
-
-            console.log("inside log score", data);
         }
     }
 
@@ -66,7 +65,7 @@ export default class Main extends React.Component{
                 countDown: prevState.countDown - 1,
             }), () => {
                 if(this.state.countDown === 10){
-                    this.setState({picclass: "show-div"})
+                    this.setState({picclass: "show-div", timerclass: "urgent timer countdown"})
                 }
                 if (this.state.countDown === 0) {
                     this.stopCountDown();
@@ -81,18 +80,17 @@ export default class Main extends React.Component{
     }
 
     endStage(){
-        this.setState({start: false, countDown: 60, divclass: "show-div"})
+        this.setState({start: false, countDown: 45, timerclass: "hide", picclass: "hide", holderclass:"hide", url: "/assets/main.png"})
         if(this.state.stage < 5){
             let newStage = this.state.stage + 1;
-            this.setState({stage: newStage})
+            this.setState({stage: newStage, divclass: "level"})
         }else if(this.state.stage === 5){
-            console.log("end game");
-            this.setState({scoreclass: "show-div", url: "/assets/hooray.png", picclass: "hide"})
+            this.setState({scoreclass: "final", url: "/assets/hooray.png", picclass: "hide", inputclass: "hide", scoringclass: "hide"})
         }
     }
 
     startGame(){
-        this.setState({start: true, buttonclass: "hide", divclass: "hide", picclass: "hide", timerclass:"show", inputclass: "input-holder"});
+        this.setState({start: true, buttonclass: "hide", divclass: "hide", picclass: "hide", timerclass:"timer countdown", inputclass: "input-holder", scoringclass: "col-11 show score", holderclass: "show"});
         this.timer();
         if(this.state.stage === 1){
             this.setState({word: this.state.one[0]});
@@ -157,6 +155,7 @@ export default class Main extends React.Component{
         <div className="container-fluid">
             <h1 className="game-title">type TYPE <b>TYPE!!!</b></h1>
             <h5 className={this.state.buttonclass}>Read the fingerspell alphabets and key in the word. Hit the SPACE BAR after each word.</h5>
+            <h5 className={this.state.buttonclass}>There are a total of 5 rounds with 45 seconds each!</h5>
             <div className="game-title">
                 <button className={this.state.buttonclass} onClick={()=>{this.startGame()}}>Start game!</button>
             </div>
@@ -173,12 +172,12 @@ export default class Main extends React.Component{
                 </div>
             </div>
 
-            <div className="row countdown">
-                <div className={this.state.timerclass}>
+            <div className={this.state.timerclass}>
+                <div className="col-6 seconds">
                     {this.state.countDown}s
                 </div>
-                <div>
-                    <img src="/assets/hurry.png" className={this.state.picclass} height='80px'/>
+                <div className="col-6 hurry">
+                    <img src="/assets/hurry.png" className={this.state.picclass} height='100px'/>
                 </div>
             </div>
 
@@ -192,14 +191,14 @@ export default class Main extends React.Component{
                     </div>
                 </div>
             </div>
-            <div>
+            <div className={this.state.holderclass}>
                 <DisplayWord word={this.state.word} stage={this.state.stage}/>
             </div>
             <div className = {this.state.inputclass}>
                 <Input onSpaceHandler={this.onSpaceHandler} start={this.state.start} startgame={this.startGame}/>
             </div>
             <div className = "merdeaf-holder">
-                <img src={this.state.url}/>
+                <img src={this.state.url} height='200px'/>
             </div>
         </div>
          );
