@@ -90,7 +90,7 @@ export default class Main extends React.Component{
     }
 
     startGame(){
-        this.setState({start: true, buttonclass: "hide", divclass: "hide", picclass: "hide", timerclass:"timer countdown", inputclass: "input-holder", scoringclass: "col-11 show score", holderclass: "show"});
+        this.setState({start: true, buttonclass: "hide", divclass: "hide", picclass: "hide", timerclass:"timer countdown", inputclass: "input-holder", scoringclass: "col-11 score", holderclass: "show"});
         this.timer();
         if(this.state.stage === 1){
             this.setState({word: this.state.one[0]});
@@ -111,27 +111,27 @@ export default class Main extends React.Component{
                 if (this.state.stage === 1){
                     this.state.one.shift();
                     let newScore = this.state.score + 10;
-                    this.setState({word: this.state.one[0], score: newScore});
+                    this.setState({word: this.state.one[0], score: newScore, inputclass: "input-holder"});
                     console.log(this.state.one)
                 }else if (this.state.stage === 2){
                     this.state.two.shift();
                     let newScore = this.state.score + 12;
-                    this.setState({word: this.state.two[0], score: newScore});
+                    this.setState({word: this.state.two[0], score: newScore, inputclass: "input-holder"});
                     console.log(this.state.two)
                 }else if (this.state.stage === 3){
                     this.state.three.shift();
                     let newScore = this.state.score + 14;
-                    this.setState({word: this.state.three[0], score: newScore});
+                    this.setState({word: this.state.three[0], score: newScore, inputclass: "input-holder"});
                     console.log(this.state.three)
                 }else if (this.state.state === 4){
                     this.state.four.shift();
                     let newScore = this.state.score + 16;
-                    this.setState({word: this.state.four[0], score: newScore});
+                    this.setState({word: this.state.four[0], score: newScore, inputclass: "input-holder"});
                     console.log(this.state.four)
                 }else{
                     this.state.five.shift();
                     let newScore = this.state.score + 18;
-                    this.setState({word: this.state.five[0], score: newScore});
+                    this.setState({word: this.state.five[0], score: newScore, inputclass: "input-holder"});
                     console.log(this.state.five)
                 }
                 if (this.state.url === "/assets/applause.png" || this.state.url === "/assets/main.png"){
@@ -141,7 +141,7 @@ export default class Main extends React.Component{
                 }
 
             }else{
-                this.setState({url: "/assets/alamak.png"})
+                this.setState({url: "/assets/alamak.png", inputclass: "yow input-holder"})
                 if(this.state.score > 0 && this.state.start === true){
                     let newScore = this.state.score - 5;
                     this.setState({score: newScore})
@@ -162,7 +162,7 @@ export default class Main extends React.Component{
 
             <div className="msg-holder">
                 <div className={this.state.divclass}>
-                    End of level! Press the SPACE BAR to start the next level!
+                    End of level! Press the SPACE BAR to start level {this.state.stage}!
                 </div>
                 <div className={this.state.scoreclass}>
                     <h3>GAME OVER!</h3>
@@ -174,6 +174,7 @@ export default class Main extends React.Component{
 
             <div className={this.state.timerclass}>
                 <div className="col-6 seconds">
+                    <img src="/assets/hurry.png" className={this.state.picclass} height='100px'/>
                     {this.state.countDown}s
                 </div>
                 <div className="col-6 hurry">
