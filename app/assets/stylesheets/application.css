@@ -18,6 +18,20 @@
   	font-family: 'Arimo', sans-serif;
   }
 
+  nav{
+  	border-radius: 10px;
+  }
+
+  .btn-primary{
+  	background-color: #f8dccb;
+  	border: none;
+  }
+
+  .btn-primary:hover{
+  	border: 2px solid red;
+  	background-color: #fb8202
+  }
+
   /* DEFAULT CSS */
 
   .navbar{
@@ -212,4 +226,35 @@ button:active{
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+/* SUDOKU STYLING */
+
+.grid-holder{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.cell{
+	box-sizing: border-box;
+	height: 80px;
+	width: 10%;
+	display: inline-block;
+	text-align: center;
+	font-weight: bold;
+	font-size: 240%;
+	border: 1px solid grey;
+	overflow: hidden;
+	padding-top: 3%;
+}
+
+
+.start-game{
+	margin-bottom: 20px;
+}
+
+.game-container{
+	text-align: center;
 }

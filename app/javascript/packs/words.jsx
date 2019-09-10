@@ -47,7 +47,7 @@ export default class Alphabets extends React.Component{
                 <h6>Allow webcam access to practice alongside!</h6>
                 <div className="row vids">
                     <div className="video-container col-6">
-                        <img src={url}></img>
+                        <img className= "gif" src={url}></img>
                     </div>
                     <div className="col-6">
                         <video autoPlay="{true}" id="videoElement"></video>
