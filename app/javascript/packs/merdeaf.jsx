@@ -14,11 +14,11 @@ export default class Main extends React.Component{
             buttonclass: "show-button",
             divclass: "hide",
             scoreclass: "hide",
-            picclass:"hide",
-            timerclass: "hide",
-            scoringclass: "hide",
-            inputclass: "hide",
-            holderclass: "hide",
+            picclass:"trans",
+            timerclass: "trans",
+            scoringclass: "trans",
+            inputclass: "trans",
+            holderclass: "trans",
             name: "",
             score : 0,
             stage : 1,
@@ -64,7 +64,7 @@ export default class Main extends React.Component{
             this.setState(prevState => ({
                 countDown: prevState.countDown - 1,
             }), () => {
-                if(this.state.countDown === 10){
+                if(this.state.countDown === 9){
                     this.setState({picclass: "show-div", timerclass: "urgent timer countdown"})
                 }
                 if (this.state.countDown === 0) {
@@ -80,7 +80,7 @@ export default class Main extends React.Component{
     }
 
     endStage(){
-        this.setState({start: false, countDown: 45, timerclass: "hide", picclass: "hide", holderclass:"hide", url: "/assets/main.png"})
+        this.setState({start: false, countDown: 45, timerclass: "trans", picclass: "hide", holderclass:"hide", url: "/assets/main.png", inputclass: "trans"})
         if(this.state.stage < 5){
             let newStage = this.state.stage + 1;
             this.setState({stage: newStage, divclass: "level"})
@@ -172,6 +172,8 @@ export default class Main extends React.Component{
                 </div>
             </div>
 
+            <div id="merdeaf-board">
+
             <div className={this.state.timerclass}>
                 <div className="col-6 seconds">
                     <img src="/assets/hurry.png" className={this.state.picclass} height='100px'/>
@@ -198,8 +200,11 @@ export default class Main extends React.Component{
             <div className = {this.state.inputclass}>
                 <Input onSpaceHandler={this.onSpaceHandler} start={this.state.start} startgame={this.startGame}/>
             </div>
+
             <div className = "merdeaf-holder">
-                <img src={this.state.url} height='200px'/>
+                <img src={this.state.url} height='130px'/>
+            </div>
+
             </div>
         </div>
          );

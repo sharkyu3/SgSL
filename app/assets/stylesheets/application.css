@@ -106,16 +106,16 @@ button:hover {
 }
 
 button:active{
-    -ms-transform: translateY(2px);
-    -webkit-transform: translateY(2px);
-    transform: translateY(2px);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-    border-bottom: solid 3px #bd6565;
+  -ms-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: solid 3px #bd6565;
 }
 
  .alphabets{
  	border-radius: 10px;
- 	width:11%;
+ 	width:10.5%;
  	margin: 5px;
  }
 
@@ -149,6 +149,10 @@ button:active{
  	text-align: center;
  }
 
+ .trans{
+ 	opacity:0;
+ }
+
  .countdown{
  	height:80px;
  	text-align: center;
@@ -160,34 +164,42 @@ button:active{
  	padding-top: 4%;
  }
 
- .urgent{
- 	color: red;
- 	font-weight: bold;
- 	animation: shake 0.5s;
-  animation-iteration-count: infinite;
- }
-
  .timer{
  	width: 100%;
  	text-align:right;
+ 	padding-top: 0px;
+ 	font-family: 'Chalkduster', fantasy;
+ 	color: white;
+ }
+
+.urgent{
+ 	color: red;
+ 	font-size: 270%;
+ 	font-weight: bold;
+ 	animation: shake 0.5s;
+  animation-iteration-count: infinite;
  }
 
  .score{
  	font-size: 140%;
  	width: 100%;
  	text-align: right;
+ 	font-family: 'Chalkduster', fantasy;
+ 	color: orange;
  }
 
  .score-holder{
  	font-size: 180%;
  	margin-top: 14px;
+ 	font-family: 'Chalkduster', fantasy;
+ 	color: yellow;
  }
 
  input{
  	width:250px;
- 	height: 50px;
+ 	height: 40px;
  	border-radius: 10px;
- 	font-size: 180%;
+ 	font-size: 170%;
  	text-align: center;
  }
 
@@ -232,7 +244,11 @@ button:active{
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-
+#merdeaf-board{
+	height: 480px;
+	background-image: url("/assets/chalkboard.png");
+	background-size: 100% 480px;
+}
 
 /* SUDOKU STYLING */
 
