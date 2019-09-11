@@ -11,8 +11,12 @@ export default class SudokuGame extends React.Component{
             numbers: [],
             grid: null,
             answer: null,
-            gridclass: "col-5 grid-holder"
-        };
+            butclass: "start-game",
+            congrats: "hide",
+            restartclass: "hide"
+        }
+        this.onChangeHandler = this.onChangeHandler.bind(this)
+        this.checkWin = this.checkWin.bind(this)
     }
 
     componentDidMount() {
@@ -43,7 +47,38 @@ export default class SudokuGame extends React.Component{
             solutionarray.push(number + 1)
         })
 
-        this.setState({grid: puzzlearray, answer: solutionarray})
+        this.setState({grid: puzzlearray, answer: solutionarray, butclass: "hide", restartclass: "start-game"})
+    }
+
+    checkWin(){
+        var checking = this.state.grid.every(num => num !== null)
+        if (checking === true){
+            this.setState({butclass: "start-game", congrats:"congrats", grid: null, answer: null})
+        }
+    }
+
+    onChangeHandler(){
+        if(isNaN(parseInt(event.target.value))=== true){
+            document.getElementById(event.target.id).value=''
+        }else{
+            console.log("answer sheet", this.state.answer)
+
+            if(parseInt(event.target.value) === this.state.answer[event.target.id]){
+                this.state.grid[event.target.id] = parseInt(event.target.value)
+                var winCell = document.getElementById("cell-" + event.target.id)
+                while(winCell.firstChild){
+                    winCell.removeChild(winCell.firstChild);
+                }
+                winCell.innerHTML = event.target.value;
+                winCell.classList.remove("empty-cell");
+                winCell.classList.add("filled-cell")
+                this.checkWin();
+
+            }else{
+                document.getElementById(event.target.id).value='';
+            }
+        }
+
     }
 
     render(){
@@ -76,7 +111,8 @@ export default class SudokuGame extends React.Component{
                 if(image !== null){
                     return <div className="cell" id={cellID} key={index}><img src={image} /></div>
                 }else{
-                    return<div className="cell empty-cell" id={cellID} key={index}></div>
+                    let inputID = "input-"+index
+                    return<div className="cell empty-cell" id={cellID} key={index} value={index}><input id={index} className="number-input" onChange={this.onChangeHandler}></input></div>
                 }
 
             })
@@ -87,11 +123,16 @@ export default class SudokuGame extends React.Component{
                 <div className="row">
                     <div className="col-6 sudoku-holder">
                         <h1>Sudoku!</h1>
-                        <button className="start-game" onClick={()=>{this.startGame()}}>Give me a puzzle!</button>
+                        <div className={this.state.congrats}>
+                            <h3>Well done on completing the puzzle! Play again?</h3>
+                            <img src="/assets/applause.png"/>
+                        </div>
+                        <button className={this.state.butclass} onClick={()=>{this.startGame()}}>Give me a puzzle!</button>
+                        <button className={this.state.restartclass} onClick={()=>{this.startGame()}}>New puzzle please!</button>
                     </div>
                 </div>
                 <div className="row">
-                    <div className={this.state.gridclass}>
+                    <div className="col-5 grid-holder">
                         {board}
                     </div>
                 </div>
