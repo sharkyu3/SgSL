@@ -11,7 +11,7 @@ export default class WordView extends React.Component{
     }
 
     componentDidMount(){
-        var video = document.querySelector("#videoElement");
+        var video = document.querySelector("#videoEl");
         if (navigator.mediaDevices.getUserMedia) {
           navigator.mediaDevices.getUserMedia({ video: true })
             .then(function (stream) {
@@ -42,13 +42,13 @@ export default class WordView extends React.Component{
         let url = this.state.info.link
         return(
             <div className="container-fluid">
-                <h2>{this.state.info.name}</h2>
+                <h2 id="word-holder">{this.state.info.name}</h2>
                 <div className="row vids">
                     <div className="video-container col-6">
                         <img className= "gif" src={url}></img>
                     </div>
                     <div className="col-6">
-                        <video autoPlay="{true}" id="videoElement"></video>
+                        <video autoPlay="{true}" id="videoEl"></video>
                     </div>
                 </div>
 

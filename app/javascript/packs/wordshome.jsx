@@ -39,14 +39,14 @@ export default class Main extends React.Component{
 
         return(
             <div className="container-fluid">
-                <div className="row">
-                    <h1>Word Bank!</h1>
+                <div className="row holder">
+                    <h1 id="bank-title">Word Bank!</h1>
                 </div>
                 <div className="row">
                     <div className="col-3 wordsss">
                         {allWords}
                     </div>
-                    <div className="col-8">
+                    <div className="col-9 rest">
                         <WordView clicked={this.state.clicked} />
                     </div>
                 </div>

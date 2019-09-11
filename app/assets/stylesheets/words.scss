@@ -18,12 +18,50 @@
 
 .wordsss{
 	font-family: 'Arimo', sans-serif;
-	height: 500px;
+	height: 490px;
+	overflow: scroll;
+	border: 1px solid grey;
+	border-radius: 10px
+}
+
+.rest{
+	height: 490px;
 }
 
 .mock-button{
 	height: 8%;
-	border: 2px solid black;
 	margin-bottom: 1px;
-	text-align: left
+	text-align: left;
+	display: block;
+	background-color: white;
+	color: #fb8200;
+	width: 100%;
+}
+
+.mock-button:hover{
+	background-color: #f9dccb;
+	text-shadow:none;
+}
+
+ #videoEl {
+	width: 100%;
+	height: 340px;
+	background-color: #666;
+	transform: rotateY(180deg);
+}
+
+#word-holder{
+	font-family: 'Arimo', sans-serif;
+	text-decoration: underline solid #fb8200;
+}
+
+#bank-title{
+	margin: 0 auto;
+	font-family: 'Arimo', sans-serif;
+	font-weight: bold;
+}
+
+.holder{
+	border-bottom: 1px solid grey;
+	margin-bottom: 20px;
 }
