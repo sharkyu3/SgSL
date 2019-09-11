@@ -14,30 +14,7 @@
  *= require_self
  */
 
-  body{
-  	font-family: 'Arimo', sans-serif;
-  }
-
-  nav{
-  	border-radius: 10px;
-  }
-
-  .navbar-brand{
-  	display: inline;
-  }
-
-  .btn-primary{
-  	background-color: #f8dccb;
-  	border: 2px solid #f8dccb;
-  }
-
-  .btn-primary:hover{
-  	border: 2px solid #fb8202;
-  	background-color: #fb8202;
-  	color:black;
-  }
-
-  /* DEFAULT CSS */
+   /* NAVBAR CSS */
 
   .navbar{
   	height:65px;
@@ -74,7 +51,34 @@
   }
 
 
+/*APP WIDE CSS*/
 
+  body{
+  	font-family: 'Arimo', sans-serif;
+  }
+
+  nav{
+  	border-radius: 10px;
+  }
+
+  .navbar-brand{
+  	display: inline;
+  }
+
+  .btn-primary{
+  	background-color: #f8dccb;
+  	border: 2px solid #f8dccb;
+  }
+
+  .btn-primary:hover{
+  	border: 2px solid #fb8202;
+  	background-color: #fb8202;
+  	color:black;
+  }
+
+.card{
+	width: 25%;
+}
 
  /* MERDEAF CSS */
 
