@@ -47,11 +47,20 @@
 
   .nav{
   	font-family: 'Arimo', sans-serif;
-  	font-size: 125%;
-  	font-weight: bold;
+  	font-size: 115%;
   	position: absolute;
   	right: 0;
   	top: 25%;
+  }
+
+  a:hover{
+  	background-color: #f9dccb;
+  	color: black;
+  	text-decoration: none;
+  }
+
+  .navbar-brand:hover{
+  	background-color: #fb8200;
   }
 
   li{
