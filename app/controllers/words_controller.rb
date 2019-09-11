@@ -5,6 +5,10 @@ class WordsController < ApplicationController
   # GET /words.json
   def index
     @words = Word.all.order('name ASC')
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @words }
+    end
   end
 
   # GET /words/1

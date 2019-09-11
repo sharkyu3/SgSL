@@ -54,10 +54,10 @@
     },
     "words": {
       "js": [
-        "/packs/js/words-9d3e2e4b870a2ef307b3.js"
+        "/packs/js/words-714dce37efa8810bd0df.js"
       ],
       "js.map": [
-        "/packs/js/words-9d3e2e4b870a2ef307b3.js.map"
+        "/packs/js/words-714dce37efa8810bd0df.js.map"
       ]
     },
     "wordsearch": {
@@ -66,6 +66,14 @@
       ],
       "js.map": [
         "/packs/js/wordsearch-c262cb2c4c56e56b254a.js.map"
+      ]
+    },
+    "wordshome": {
+      "js": [
+        "/packs/js/wordshome-952319ae765d21b974da.js"
+      ],
+      "js.map": [
+        "/packs/js/wordshome-952319ae765d21b974da.js.map"
       ]
     }
   },
@@ -77,8 +85,10 @@
   "numbers.js.map": "/packs/js/numbers-f54f1702b3fe1b70c388.js.map",
   "sudoku.js": "/packs/js/sudoku-05904175dfe4e18842b3.js",
   "sudoku.js.map": "/packs/js/sudoku-05904175dfe4e18842b3.js.map",
-  "words.js": "/packs/js/words-9d3e2e4b870a2ef307b3.js",
-  "words.js.map": "/packs/js/words-9d3e2e4b870a2ef307b3.js.map",
+  "words.js": "/packs/js/words-714dce37efa8810bd0df.js",
+  "words.js.map": "/packs/js/words-714dce37efa8810bd0df.js.map",
   "wordsearch.js": "/packs/js/wordsearch-c262cb2c4c56e56b254a.js",
-  "wordsearch.js.map": "/packs/js/wordsearch-c262cb2c4c56e56b254a.js.map"
+  "wordsearch.js.map": "/packs/js/wordsearch-c262cb2c4c56e56b254a.js.map",
+  "wordshome.js": "/packs/js/wordshome-952319ae765d21b974da.js",
+  "wordshome.js.map": "/packs/js/wordshome-952319ae765d21b974da.js.map"
 }

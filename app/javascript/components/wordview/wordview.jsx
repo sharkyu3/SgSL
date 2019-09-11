@@ -2,20 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-export default class Words extends React.Component{
-
+export default class WordView extends React.Component{
     constructor(){
         super();
         this.state = {
-            info: [],
-            params: null
-        }
+            info: []
+        };
     }
 
     componentDidMount(){
-        this.setState({params: event.target.URL}, function() {
-            this.getURL()
-        })
         var video = document.querySelector("#videoElement");
         if (navigator.mediaDevices.getUserMedia) {
           navigator.mediaDevices.getUserMedia({ video: true })
@@ -28,23 +23,26 @@ export default class Words extends React.Component{
         }
     }
 
+    componentDidUpdate(prevProps, prevState){
+        console.log("checking for update")
+        if(this.props.clicked !== prevProps.clicked){
+            this.getURL()
+        }
+    }
+
     getURL(){
-        var test = this.state.params + ".json"
+        var test = document.URL + "/" + this.props.clicked + ".json"
         fetch(test)
         .then(res=>res.json())
         .then(result=>this.setState({info: result}));
     }
 
     render(){
-        let url = ""
-        if (this.state.info.link !== undefined){
-            url = this.state.info.link
-        }
 
+        let url = this.state.info.link
         return(
             <div className="container-fluid">
                 <h2>{this.state.info.name}</h2>
-                <h6>Allow webcam access to practice alongside!</h6>
                 <div className="row vids">
                     <div className="video-container col-6">
                         <img className= "gif" src={url}></img>
@@ -53,13 +51,7 @@ export default class Words extends React.Component{
                         <video autoPlay="{true}" id="videoElement"></video>
                     </div>
                 </div>
+
             </div>)
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Words />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})

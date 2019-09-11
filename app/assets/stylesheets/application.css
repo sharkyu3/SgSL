@@ -22,9 +22,13 @@
   	border-radius: 10px;
   }
 
+  .navbar-brand{
+  	display: inline;
+  }
+
   .btn-primary{
   	background-color: #f8dccb;
-  	border: none;
+  	border: 2px solid #f8dccb;
   }
 
   .btn-primary:hover{
