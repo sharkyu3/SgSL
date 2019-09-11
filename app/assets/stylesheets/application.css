@@ -32,8 +32,9 @@
   }
 
   .btn-primary:hover{
-  	border: 2px solid red;
-  	background-color: #fb8202
+  	border: 2px solid #fb8202;
+  	background-color: #fb8202;
+  	color:black;
   }
 
   /* DEFAULT CSS */

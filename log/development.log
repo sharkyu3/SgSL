@@ -56388,3 +56388,86 @@ Processing by HomepageController#index as HTML
 Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-09-11 14:01:15 +0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-11 14:02:53 +0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-11 14:03:34 +0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words" for ::1 at 2019-09-11 14:03:46 +0800
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (4.7ms)[0m  [1m[34mSELECT "words".* FROM "words" ORDER BY name ASC[0m
+  ↳ app/views/words/index.html.erb:13
+  Rendered words/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 60ms (Views: 36.4ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/words.json" for ::1 at 2019-09-11 14:03:46 +0800
+Processing by WordsController#index as JSON
+  [1m[36mWord Load (1.4ms)[0m  [1m[34mSELECT "words".* FROM "words" ORDER BY name ASC[0m
+  ↳ app/controllers/words_controller.rb:10
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/words/5.json" for ::1 at 2019-09-11 14:04:01 +0800
+Processing by WordsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:72
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:17
+  Rendering words/show.json.jbuilder
+  Rendered words/_word.json.jbuilder (0.9ms)
+  Rendered words/show.json.jbuilder (2.6ms)
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/words/11.json" for ::1 at 2019-09-11 14:04:04 +0800
+Processing by WordsController#show as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:72
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:17
+  Rendering words/show.json.jbuilder
+  Rendered words/_word.json.jbuilder (0.4ms)
+  Rendered words/show.json.jbuilder (1.1ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/words/64.json" for ::1 at 2019-09-11 14:04:07 +0800
+Processing by WordsController#show as JSON
+  Parameters: {"id"=>"64"}
+  [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:72
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:17
+  Rendering words/show.json.jbuilder
+  Rendered words/_word.json.jbuilder (0.8ms)
+  Rendered words/show.json.jbuilder (2.1ms)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-09-11 14:04:12 +0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 57ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
