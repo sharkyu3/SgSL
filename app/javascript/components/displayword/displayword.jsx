@@ -34,7 +34,6 @@ export default class DisplayWord extends React.Component{
                         array.push(alphabets.link)
                     }
                 })
-
             });
         }
 

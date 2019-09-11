@@ -275,18 +275,27 @@ button:active{
 }
 
 .cell{
-	box-sizing: border-box;
-	height: 80px;
+	height: 50px;
 	width: 10%;
 	display: inline-block;
 	text-align: center;
-	font-weight: bold;
-	font-size: 240%;
-	border: 1px solid grey;
+	border-radius: 6px;
+	margin-right: 3px;
+	margin-top: 3px;
 	overflow: hidden;
-	padding-top: 3%;
+	border: 0.5px solid #fb8200;
+	border-collapse: collapse
 }
 
+.cell img{
+	margin: 0 auto;
+	object-fit: cover;
+	width: 100%;
+}
+
+.sudoku-holder{
+	margin: 0 auto;
+}
 
 .start-game{
 	margin-bottom: 20px;
@@ -294,4 +303,8 @@ button:active{
 
 .game-container{
 	text-align: center;
+}
+
+#cell-0, #cell-1, #cell-2, #cell-9, #cell-10, #cell-11, #cell-18, #cell-19, #cell-20, #cell-6, #cell-7, #cell-8, #cell-15, #cell-16, #cell-17, #cell-24, #cell-25, #cell-26, #cell-30, #cell-31, #cell-32, #cell-39, #cell-40, #cell-41, #cell-48, #cell-49, #cell-50, #cell-54, #cell-55, #cell-56, #cell-63, #cell-64, #cell-65, #cell-72, #cell-73, #cell-74, #cell-60, #cell-61, #cell-62, #cell-69, #cell-70, #cell-71, #cell-78, #cell-79, #cell-80 {
+	border: 3px solid black;
 }
