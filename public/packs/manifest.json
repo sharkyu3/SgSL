@@ -52,28 +52,20 @@
         "/packs/js/sudoku-05904175dfe4e18842b3.js.map"
       ]
     },
-    "words": {
-      "js": [
-        "/packs/js/words-714dce37efa8810bd0df.js"
-      ],
-      "js.map": [
-        "/packs/js/words-714dce37efa8810bd0df.js.map"
-      ]
-    },
     "wordsearch": {
       "js": [
-        "/packs/js/wordsearch-c262cb2c4c56e56b254a.js"
+        "/packs/js/wordsearch-1d6b5d163cac7d78d379.js"
       ],
       "js.map": [
-        "/packs/js/wordsearch-c262cb2c4c56e56b254a.js.map"
+        "/packs/js/wordsearch-1d6b5d163cac7d78d379.js.map"
       ]
     },
     "wordshome": {
       "js": [
-        "/packs/js/wordshome-46d7bc40b53d7446b299.js"
+        "/packs/js/wordshome-6348230bb3ce3f445920.js"
       ],
       "js.map": [
-        "/packs/js/wordshome-46d7bc40b53d7446b299.js.map"
+        "/packs/js/wordshome-6348230bb3ce3f445920.js.map"
       ]
     }
   },
@@ -85,10 +77,8 @@
   "numbers.js.map": "/packs/js/numbers-f54f1702b3fe1b70c388.js.map",
   "sudoku.js": "/packs/js/sudoku-05904175dfe4e18842b3.js",
   "sudoku.js.map": "/packs/js/sudoku-05904175dfe4e18842b3.js.map",
-  "words.js": "/packs/js/words-714dce37efa8810bd0df.js",
-  "words.js.map": "/packs/js/words-714dce37efa8810bd0df.js.map",
-  "wordsearch.js": "/packs/js/wordsearch-c262cb2c4c56e56b254a.js",
-  "wordsearch.js.map": "/packs/js/wordsearch-c262cb2c4c56e56b254a.js.map",
-  "wordshome.js": "/packs/js/wordshome-46d7bc40b53d7446b299.js",
-  "wordshome.js.map": "/packs/js/wordshome-46d7bc40b53d7446b299.js.map"
+  "wordsearch.js": "/packs/js/wordsearch-1d6b5d163cac7d78d379.js",
+  "wordsearch.js.map": "/packs/js/wordsearch-1d6b5d163cac7d78d379.js.map",
+  "wordshome.js": "/packs/js/wordshome-6348230bb3ce3f445920.js",
+  "wordshome.js.map": "/packs/js/wordshome-6348230bb3ce3f445920.js.map"
 }
