@@ -125,7 +125,7 @@ export default class SudokuGame extends React.Component{
                         <h1>Sudoku!</h1>
                         <div className={this.state.congrats}>
                             <h3>Well done on completing the puzzle! Play again?</h3>
-                            <img src="/assets/applause.png"/>
+                            <img src="/pics/applause.png"/>
                         </div>
                         <button className={this.state.butclass} onClick={()=>{this.startGame()}}>Give me a puzzle!</button>
                         <button className={this.state.restartclass} onClick={()=>{this.startGame()}}>New puzzle please!</button>

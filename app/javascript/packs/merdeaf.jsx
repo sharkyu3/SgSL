@@ -80,12 +80,12 @@ export default class Main extends React.Component{
     }
 
     endStage(){
-        this.setState({start: false, countDown: 45, timerclass: "trans", picclass: "hide", holderclass:"hide", url: "/assets/main.png", inputclass: "trans"})
+        this.setState({start: false, countDown: 45, timerclass: "trans", picclass: "hide", holderclass:"hide", url: "/pics/main.png", inputclass: "trans"})
         if(this.state.stage < 5){
             let newStage = this.state.stage + 1;
             this.setState({stage: newStage, divclass: "level"})
         }else if(this.state.stage === 5){
-            this.setState({scoreclass: "final", url: "/assets/hooray.png", picclass: "hide", inputclass: "hide", scoringclass: "hide"})
+            this.setState({scoreclass: "final", url: "/pics/hooray.png", picclass: "hide", inputclass: "hide", scoringclass: "hide"})
         }
     }
 
@@ -134,14 +134,14 @@ export default class Main extends React.Component{
                     this.setState({word: this.state.five[0], score: newScore, inputclass: "input-holder"});
                     console.log(this.state.five)
                 }
-                if (this.state.url === "/assets/applause.png" || this.state.url === "/assets/main.png"){
-                    this.setState({url:"/assets/good.png"});
+                if (this.state.url === "/pics/applause.png" || this.state.url === "/pics/main.png"){
+                    this.setState({url:"/pics/good.png"});
                 }else{
-                    this.setState({url:"/assets/applause.png"})
+                    this.setState({url:"/pics/applause.png"})
                 }
 
             }else{
-                this.setState({url: "/assets/alamak.png", inputclass: "yow input-holder"})
+                this.setState({url: "/pics/alamak.png", inputclass: "yow input-holder"})
                 if(this.state.score > 0 && this.state.start === true){
                     let newScore = this.state.score - 5;
                     this.setState({score: newScore})
@@ -176,11 +176,11 @@ export default class Main extends React.Component{
 
             <div className={this.state.timerclass}>
                 <div className="col-6 seconds">
-                    <img src="/assets/hurry.png" className={this.state.picclass} height='100px'/>
+                    <img src="/pics/hurry.png" className={this.state.picclass} height='100px'/>
                     {this.state.countDown}s
                 </div>
                 <div className="col-6 hurry">
-                    <img src="/assets/hurry.png" className={this.state.picclass} height='100px'/>
+                    <img src="/pics/hurry.png" className={this.state.picclass} height='100px'/>
                 </div>
             </div>
 
