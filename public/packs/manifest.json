@@ -1,84 +1,84 @@
 {
-  "alphabets.js": "/packs/js/alphabets-64f59f8d717af3a9f914.js",
-  "alphabets.js.map": "/packs/js/alphabets-64f59f8d717af3a9f914.js.map",
-  "application.js": "/packs/js/application-8f7c74394280b9f5bc56.js",
-  "application.js.map": "/packs/js/application-8f7c74394280b9f5bc56.js.map",
+  "alphabets.js": "/packs/js/alphabets-add965be64f006a77417.js",
+  "alphabets.js.map": "/packs/js/alphabets-add965be64f006a77417.js.map",
+  "application.js": "/packs/js/application-3bfd7fdc9edcbd1aace3.js",
+  "application.js.map": "/packs/js/application-3bfd7fdc9edcbd1aace3.js.map",
   "entrypoints": {
     "alphabets": {
       "js": [
-        "/packs/js/alphabets-64f59f8d717af3a9f914.js"
+        "/packs/js/alphabets-add965be64f006a77417.js"
       ],
       "js.map": [
-        "/packs/js/alphabets-64f59f8d717af3a9f914.js.map"
+        "/packs/js/alphabets-add965be64f006a77417.js.map"
       ]
     },
     "application": {
       "js": [
-        "/packs/js/application-8f7c74394280b9f5bc56.js"
+        "/packs/js/application-3bfd7fdc9edcbd1aace3.js"
       ],
       "js.map": [
-        "/packs/js/application-8f7c74394280b9f5bc56.js.map"
+        "/packs/js/application-3bfd7fdc9edcbd1aace3.js.map"
       ]
     },
     "hello_react": {
       "js": [
-        "/packs/js/hello_react-9afdc3594be420902f07.js"
+        "/packs/js/hello_react-0733c71806e8c8dec5a4.js"
       ],
       "js.map": [
-        "/packs/js/hello_react-9afdc3594be420902f07.js.map"
+        "/packs/js/hello_react-0733c71806e8c8dec5a4.js.map"
       ]
     },
     "merdeaf": {
       "js": [
-        "/packs/js/merdeaf-b20c5994dbde954ee802.js"
+        "/packs/js/merdeaf-13169d296ac05cad3408.js"
       ],
       "js.map": [
-        "/packs/js/merdeaf-b20c5994dbde954ee802.js.map"
+        "/packs/js/merdeaf-13169d296ac05cad3408.js.map"
       ]
     },
     "numbers": {
       "js": [
-        "/packs/js/numbers-f12d8f4d6bbeedddd8d8.js"
+        "/packs/js/numbers-f54f1702b3fe1b70c388.js"
       ],
       "js.map": [
-        "/packs/js/numbers-f12d8f4d6bbeedddd8d8.js.map"
+        "/packs/js/numbers-f54f1702b3fe1b70c388.js.map"
       ]
     },
     "sudoku": {
       "js": [
-        "/packs/js/sudoku-05a3e0df53b6b4a3e47e.js"
+        "/packs/js/sudoku-9c4f5b6b63db19f432cb.js"
       ],
       "js.map": [
-        "/packs/js/sudoku-05a3e0df53b6b4a3e47e.js.map"
+        "/packs/js/sudoku-9c4f5b6b63db19f432cb.js.map"
       ]
     },
     "wordsearch": {
       "js": [
-        "/packs/js/wordsearch-8935c571361ee49bbb98.js"
+        "/packs/js/wordsearch-1d6b5d163cac7d78d379.js"
       ],
       "js.map": [
-        "/packs/js/wordsearch-8935c571361ee49bbb98.js.map"
+        "/packs/js/wordsearch-1d6b5d163cac7d78d379.js.map"
       ]
     },
     "wordshome": {
       "js": [
-        "/packs/js/wordshome-2a8596f88a52c3b4c055.js"
+        "/packs/js/wordshome-6348230bb3ce3f445920.js"
       ],
       "js.map": [
-        "/packs/js/wordshome-2a8596f88a52c3b4c055.js.map"
+        "/packs/js/wordshome-6348230bb3ce3f445920.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs/js/hello_react-9afdc3594be420902f07.js",
-  "hello_react.js.map": "/packs/js/hello_react-9afdc3594be420902f07.js.map",
-  "merdeaf.js": "/packs/js/merdeaf-b20c5994dbde954ee802.js",
-  "merdeaf.js.map": "/packs/js/merdeaf-b20c5994dbde954ee802.js.map",
-  "numbers.js": "/packs/js/numbers-f12d8f4d6bbeedddd8d8.js",
-  "numbers.js.map": "/packs/js/numbers-f12d8f4d6bbeedddd8d8.js.map",
-  "sudoku.js": "/packs/js/sudoku-05a3e0df53b6b4a3e47e.js",
-  "sudoku.js.map": "/packs/js/sudoku-05a3e0df53b6b4a3e47e.js.map",
-  "wordsearch.js": "/packs/js/wordsearch-8935c571361ee49bbb98.js",
-  "wordsearch.js.map": "/packs/js/wordsearch-8935c571361ee49bbb98.js.map",
-  "wordshome.js": "/packs/js/wordshome-2a8596f88a52c3b4c055.js",
-  "wordshome.js.map": "/packs/js/wordshome-2a8596f88a52c3b4c055.js.map"
+  "hello_react.js": "/packs/js/hello_react-0733c71806e8c8dec5a4.js",
+  "hello_react.js.map": "/packs/js/hello_react-0733c71806e8c8dec5a4.js.map",
+  "merdeaf.js": "/packs/js/merdeaf-13169d296ac05cad3408.js",
+  "merdeaf.js.map": "/packs/js/merdeaf-13169d296ac05cad3408.js.map",
+  "numbers.js": "/packs/js/numbers-f54f1702b3fe1b70c388.js",
+  "numbers.js.map": "/packs/js/numbers-f54f1702b3fe1b70c388.js.map",
+  "sudoku.js": "/packs/js/sudoku-9c4f5b6b63db19f432cb.js",
+  "sudoku.js.map": "/packs/js/sudoku-9c4f5b6b63db19f432cb.js.map",
+  "wordsearch.js": "/packs/js/wordsearch-1d6b5d163cac7d78d379.js",
+  "wordsearch.js.map": "/packs/js/wordsearch-1d6b5d163cac7d78d379.js.map",
+  "wordshome.js": "/packs/js/wordshome-6348230bb3ce3f445920.js",
+  "wordshome.js.map": "/packs/js/wordshome-6348230bb3ce3f445920.js.map"
 }
