@@ -83,7 +83,7 @@ export default class SudokuGame extends React.Component{
                     for (let i=0; i<weeArray.length; i++) {
                         weeArray[i].style.backgroundColor="white"
                     }
-                }, 2000)
+                }, 500)
             }
         }
 

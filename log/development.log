@@ -60760,3 +60760,59 @@ Processing by GamesController#sudoku as JSON
 Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/games/sudoku" for ::1 at 2019-09-12 16:48:59 +0800
+Processing by GamesController#sudoku as HTML
+  Rendering games/sudoku.html.erb within layouts/application
+  Rendered games/sudoku.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/sudoku.json" for ::1 at 2019-09-12 16:49:00 +0800
+Processing by GamesController#sudoku as JSON
+  [1m[36mNumber Load (1.1ms)[0m  [1m[34mSELECT "numbers".* FROM "numbers"[0m
+  ↳ app/controllers/games_controller.rb:25
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/games/sudoku" for ::1 at 2019-09-12 16:49:10 +0800
+Processing by GamesController#sudoku as HTML
+  Rendering games/sudoku.html.erb within layouts/application
+  Rendered games/sudoku.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 55ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/sudoku.json" for ::1 at 2019-09-12 16:49:10 +0800
+Processing by GamesController#sudoku as JSON
+  [1m[36mNumber Load (1.1ms)[0m  [1m[34mSELECT "numbers".* FROM "numbers"[0m
+  ↳ app/controllers/games_controller.rb:25
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/games/sudoku" for ::1 at 2019-09-12 16:49:11 +0800
+Processing by GamesController#sudoku as HTML
+  Rendering games/sudoku.html.erb within layouts/application
+  Rendered games/sudoku.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/sudoku.json" for ::1 at 2019-09-12 16:49:12 +0800
+Processing by GamesController#sudoku as JSON
+  [1m[36mNumber Load (4.0ms)[0m  [1m[34mSELECT "numbers".* FROM "numbers"[0m
+  ↳ app/controllers/games_controller.rb:25
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/games/sudoku" for ::1 at 2019-09-12 16:50:04 +0800
+Processing by GamesController#sudoku as HTML
+  Rendering games/sudoku.html.erb within layouts/application
+  Rendered games/sudoku.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/sudoku.json" for ::1 at 2019-09-12 16:50:04 +0800
+Processing by GamesController#sudoku as JSON
+  [1m[36mNumber Load (0.8ms)[0m  [1m[34mSELECT "numbers".* FROM "numbers"[0m
+  ↳ app/controllers/games_controller.rb:25
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.8ms)
+
+
