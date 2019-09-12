@@ -60055,3 +60055,136 @@ Processing by GamesController#sudoku as JSON
 Completed 200 OK in 49ms (Views: 10.6ms | ActiveRecord: 37.5ms)
 
 
+Started GET "/" for ::1 at 2019-09-11 21:03:05 +0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lessons/index" for ::1 at 2019-09-11 21:03:57 +0800
+Processing by LessonsController#index as HTML
+  Rendering lessons/index.html.erb within layouts/application
+  Rendered lessons/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lessons/alphabets" for ::1 at 2019-09-11 21:03:58 +0800
+Processing by LessonsController#alphabets as HTML
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:10
+  Rendering lessons/alphabets.html.erb within layouts/application
+  Rendered lessons/alphabets.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 72ms (Views: 35.4ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/lessons/alphabets.json" for ::1 at 2019-09-11 21:03:59 +0800
+Processing by LessonsController#alphabets as JSON
+  [1m[36mLesson Load (2.1ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:10
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/words" for ::1 at 2019-09-11 21:04:08 +0800
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (3.1ms)[0m  [1m[34mSELECT "words".* FROM "words" ORDER BY name ASC[0m
+  ↳ app/views/words/index.html.erb:13
+  Rendered words/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 311ms (Views: 242.0ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/words.json" for ::1 at 2019-09-11 21:04:09 +0800
+Processing by WordsController#index as JSON
+  [1m[36mWord Load (1.1ms)[0m  [1m[34mSELECT "words".* FROM "words" ORDER BY name ASC[0m
+  ↳ app/controllers/words_controller.rb:10
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/words/21.json" for ::1 at 2019-09-11 21:04:12 +0800
+Processing by WordsController#show as JSON
+  Parameters: {"id"=>"21"}
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:72
+  [1m[36mCACHE Word Load (0.0ms)[0m  [1m[34mSELECT  "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:17
+  Rendering words/show.json.jbuilder
+  Rendered words/_word.json.jbuilder (0.9ms)
+  Rendered words/show.json.jbuilder (2.2ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/games/index" for ::1 at 2019-09-11 21:04:18 +0800
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/sudoku" for ::1 at 2019-09-11 21:04:20 +0800
+Processing by GamesController#sudoku as HTML
+  Rendering games/sudoku.html.erb within layouts/application
+  Rendered games/sudoku.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 46ms (Views: 45.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/sudoku.json" for ::1 at 2019-09-11 21:04:20 +0800
+Processing by GamesController#sudoku as JSON
+  [1m[36mNumber Load (1.6ms)[0m  [1m[34mSELECT "numbers".* FROM "numbers"[0m
+  ↳ app/controllers/games_controller.rb:25
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/games/merdeaf" for ::1 at 2019-09-11 21:04:29 +0800
+Processing by GamesController#merdeaf as HTML
+  Rendering games/merdeaf.html.erb within layouts/application
+  Rendered games/merdeaf.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 30ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/merdeaf.json" for ::1 at 2019-09-11 21:04:29 +0800
+Processing by GamesController#merdeaf as JSON
+  [1m[36mAlphabet Load (1.2ms)[0m  [1m[34mSELECT "alphabets".* FROM "alphabets"[0m
+  ↳ app/controllers/games_controller.rb:9
+Completed 200 OK in 25ms (Views: 11.6ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/" for ::1 at 2019-09-11 21:05:22 +0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/words" for ::1 at 2019-09-11 21:05:34 +0800
+Processing by WordsController#index as HTML
+  Rendering words/index.html.erb within layouts/application
+  [1m[36mWord Load (2.8ms)[0m  [1m[34mSELECT "words".* FROM "words" ORDER BY name ASC[0m
+  ↳ app/views/words/index.html.erb:13
+  Rendered words/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 55ms (Views: 50.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/words.json" for ::1 at 2019-09-11 21:05:34 +0800
+Processing by WordsController#index as JSON
+  [1m[36mWord Load (2.9ms)[0m  [1m[34mSELECT "words".* FROM "words" ORDER BY name ASC[0m
+  ↳ app/controllers/words_controller.rb:10
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-09-11 21:05:37 +0800
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 123ms (Views: 121.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-12 08:52:05 +0800
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/huiyu/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 1283ms (Views: 1275.0ms | ActiveRecord: 0.0ms)
+
+
