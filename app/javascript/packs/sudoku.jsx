@@ -75,7 +75,15 @@ export default class SudokuGame extends React.Component{
                 this.checkWin();
 
             }else{
+                let weeId = document.getElementById(event.target.id);
                 document.getElementById(event.target.id).value='';
+                document.getElementById(event.target.id).style.backgroundColor="red"
+                setTimeout(() => {
+                    let weeArray = document.querySelectorAll(".number-input")
+                    for (let i=0; i<weeArray.length; i++) {
+                        weeArray[i].style.backgroundColor="white"
+                    }
+                }, 2000)
             }
         }
 
