@@ -23,7 +23,7 @@ export default class Main extends React.Component{
             score : 0,
             stage : 1,
             countDown: 45,
-            url: '/assets/main.png',
+            url: '/pics/main.png',
 
             one : RandomWords({exactly: 60, maxLength: 5}),
             two : RandomWords({exactly: 60, maxLength: 8}),

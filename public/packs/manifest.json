@@ -30,10 +30,10 @@
     },
     "merdeaf": {
       "js": [
-        "/packs/js/merdeaf-13169d296ac05cad3408.js"
+        "/packs/js/merdeaf-1d7bb35b98b8bc67a3ce.js"
       ],
       "js.map": [
-        "/packs/js/merdeaf-13169d296ac05cad3408.js.map"
+        "/packs/js/merdeaf-1d7bb35b98b8bc67a3ce.js.map"
       ]
     },
     "numbers": {
@@ -71,8 +71,8 @@
   },
   "hello_react.js": "/packs/js/hello_react-0733c71806e8c8dec5a4.js",
   "hello_react.js.map": "/packs/js/hello_react-0733c71806e8c8dec5a4.js.map",
-  "merdeaf.js": "/packs/js/merdeaf-13169d296ac05cad3408.js",
-  "merdeaf.js.map": "/packs/js/merdeaf-13169d296ac05cad3408.js.map",
+  "merdeaf.js": "/packs/js/merdeaf-1d7bb35b98b8bc67a3ce.js",
+  "merdeaf.js.map": "/packs/js/merdeaf-1d7bb35b98b8bc67a3ce.js.map",
   "numbers.js": "/packs/js/numbers-f54f1702b3fe1b70c388.js",
   "numbers.js.map": "/packs/js/numbers-f54f1702b3fe1b70c388.js.map",
   "sudoku.js": "/packs/js/sudoku-9c4f5b6b63db19f432cb.js",
