@@ -263,7 +263,7 @@ button:active{
 
 #merdeaf-board{
 	height: 480px;
-	background-image: url("/assets/chalkboard.png");
+	background-image: url("/pics/chalkboard.png");
 	background-size: 100% 480px;
 }
 
