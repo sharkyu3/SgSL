@@ -53,7 +53,7 @@ export default class SudokuGame extends React.Component{
     checkWin(){
         var checking = this.state.grid.every(num => num !== null)
         if (checking === true){
-            this.setState({butclass: "start-game", congrats:"congrats", grid: null, answer: null})
+            this.setState({butclass: "hide", congrats:"congrats", grid: null, answer: null, restartclass: "start-game"})
         }
     }
 
