@@ -5,9 +5,9 @@ class MerdeafScoresController < ApplicationController
   # GET /merdeaf_scores
   # GET /merdeaf_scores.json
   def index
-    # @merdeaf_scores = MerdeafScore.all.order('score DESC')
     @merdeaf_scores = MerdeafScore.order("score DESC").limit(15)
-    # @merdeaf_scores = MerdeafScore.find(:all, :order => 'score DESC' :limit => 5)
+
+    @latest_scores = MerdeafScore.last
   end
 
   # GET /merdeaf_scores/1

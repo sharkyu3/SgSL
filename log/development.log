@@ -61295,3 +61295,113 @@ Processing by MerdeafScoresController#index as HTML
 Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/merdeaf_scores" for ::1 at 2019-09-14 22:50:47 +0800
+Processing by MerdeafScoresController#index as HTML
+  [1m[36mMerdeafScore Load (1.1ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY "merdeaf_scores"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/merdeaf_scores_controller.rb:10
+  Rendering merdeaf_scores/index.html.erb within layouts/application
+  [1m[36mMerdeafScore Load (0.4ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/huiyu/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE MerdeafScore Load (0.0ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/huiyu/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE MerdeafScore Load (0.0ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/huiyu/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE MerdeafScore Load (0.0ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/huiyu/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE MerdeafScore Load (0.0ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/huiyu/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE MerdeafScore Load (0.0ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/huiyu/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE MerdeafScore Load (0.0ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/huiyu/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE MerdeafScore Load (0.0ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/huiyu/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered merdeaf_scores/index.html.erb within layouts/application (240.2ms)
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `latest_score' for #<#<Class:0x00007f9578a683e8>:0x00007f9578a72618>
+Did you mean?  @latest_score):
+    15: 
+    16:   <tbody>
+    17:   		<tr>
+    18:         <td><%= latest_score.name %></td>
+    19:         <td><%= latest_score.score %></td>
+    20:       </tr>
+    21:     <% @merdeaf_scores.each do |merdeaf_score| %>
+  
+app/views/merdeaf_scores/index.html.erb:18:in `_app_views_merdeaf_scores_index_html_erb___13589617194450300_70139975518220'
+Started GET "/merdeaf_scores" for ::1 at 2019-09-14 22:51:22 +0800
+Processing by MerdeafScoresController#index as HTML
+  [1m[36mMerdeafScore Load (0.3ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY "merdeaf_scores"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/merdeaf_scores_controller.rb:10
+  Rendering merdeaf_scores/index.html.erb within layouts/application
+  Rendered merdeaf_scores/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<MerdeafScore:0x00007f957d0431d8>):
+    14: 
+    15: 
+    16:   <tbody>
+    17:   	<% @latest_scores.each do |merdeaf_score| %>
+    18:   		<tr>
+    19:         <td><%= latest_score.name %></td>
+    20:         <td><%= latest_score.score %></td>
+  
+app/views/merdeaf_scores/index.html.erb:17:in `_app_views_merdeaf_scores_index_html_erb___13589617194450300_70140012138560'
+Started GET "/merdeaf_scores" for ::1 at 2019-09-14 22:51:46 +0800
+Processing by MerdeafScoresController#index as HTML
+  [1m[36mMerdeafScore Load (0.4ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY "merdeaf_scores"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/merdeaf_scores_controller.rb:10
+  Rendering merdeaf_scores/index.html.erb within layouts/application
+  Rendered merdeaf_scores/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<MerdeafScore:0x00007f9578500a68>):
+    14: 
+    15: 
+    16:   <tbody>
+    17:   	<% @latest_scores.each do |latest_score| %>
+    18:   		<tr>
+    19:         <td><%= latest_score.name %></td>
+    20:         <td><%= latest_score.score %></td>
+  
+app/views/merdeaf_scores/index.html.erb:17:in `_app_views_merdeaf_scores_index_html_erb___13589617194450300_70140005883020'
+Started GET "/merdeaf_scores" for ::1 at 2019-09-14 22:52:41 +0800
+Processing by MerdeafScoresController#index as HTML
+  [1m[36mMerdeafScore Load (0.3ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY "merdeaf_scores"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/merdeaf_scores_controller.rb:10
+  Rendering merdeaf_scores/index.html.erb within layouts/application
+  [1m[36mMerdeafScore Load (0.4ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 15]]
+  ↳ app/views/merdeaf_scores/index.html.erb:17
+  Rendered merdeaf_scores/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/merdeaf_scores" for ::1 at 2019-09-14 22:54:18 +0800
+Processing by MerdeafScoresController#index as HTML
+  [1m[36mMerdeafScore Load (0.4ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY "merdeaf_scores"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/merdeaf_scores_controller.rb:10
+  Rendering merdeaf_scores/index.html.erb within layouts/application
+  [1m[36mMerdeafScore Load (1.1ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 15]]
+  ↳ app/views/merdeaf_scores/index.html.erb:18
+  Rendered merdeaf_scores/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/merdeaf_scores" for ::1 at 2019-09-14 22:54:27 +0800
+Processing by MerdeafScoresController#index as HTML
+  [1m[36mMerdeafScore Load (0.3ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY "merdeaf_scores"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/merdeaf_scores_controller.rb:10
+  Rendering merdeaf_scores/index.html.erb within layouts/application
+  [1m[36mMerdeafScore Load (0.3ms)[0m  [1m[34mSELECT  "merdeaf_scores".* FROM "merdeaf_scores" ORDER BY score DESC LIMIT $1[0m  [["LIMIT", 15]]
+  ↳ app/views/merdeaf_scores/index.html.erb:18
+  Rendered merdeaf_scores/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 1.0ms)
+
+
