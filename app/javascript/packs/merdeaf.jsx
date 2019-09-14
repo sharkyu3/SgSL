@@ -44,7 +44,6 @@ export default class Main extends React.Component{
                 name: event.target.value,
                 score: this.state.score
             }
-            console.log(data)
 
             var request = new XMLHttpRequest();
 
@@ -112,27 +111,22 @@ export default class Main extends React.Component{
                     this.state.one.shift();
                     let newScore = this.state.score + 10;
                     this.setState({word: this.state.one[0], score: newScore, inputclass: "input-holder"});
-                    console.log(this.state.one)
                 }else if (this.state.stage === 2){
                     this.state.two.shift();
                     let newScore = this.state.score + 12;
                     this.setState({word: this.state.two[0], score: newScore, inputclass: "input-holder"});
-                    console.log(this.state.two)
                 }else if (this.state.stage === 3){
                     this.state.three.shift();
                     let newScore = this.state.score + 14;
                     this.setState({word: this.state.three[0], score: newScore, inputclass: "input-holder"});
-                    console.log(this.state.three)
                 }else if (this.state.state === 4){
                     this.state.four.shift();
                     let newScore = this.state.score + 16;
                     this.setState({word: this.state.four[0], score: newScore, inputclass: "input-holder"});
-                    console.log(this.state.four)
                 }else{
                     this.state.five.shift();
                     let newScore = this.state.score + 18;
                     this.setState({word: this.state.five[0], score: newScore, inputclass: "input-holder"});
-                    console.log(this.state.five)
                 }
                 if (this.state.url === "/pics/applause.png" || this.state.url === "/pics/main.png"){
                     this.setState({url:"/pics/good.png"});

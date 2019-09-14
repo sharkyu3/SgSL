@@ -47,7 +47,7 @@ export default class SudokuGame extends React.Component{
             solutionarray.push(number + 1)
         })
 
-        this.setState({grid: puzzlearray, answer: solutionarray, butclass: "hide", restartclass: "start-game"})
+        this.setState({grid: puzzlearray, answer: solutionarray, butclass: "hide", restartclass: "start-game", congrats: "hide"})
     }
 
     checkWin(){
@@ -61,8 +61,6 @@ export default class SudokuGame extends React.Component{
         if(isNaN(parseInt(event.target.value))=== true){
             document.getElementById(event.target.id).value=''
         }else{
-            console.log("answer sheet", this.state.answer)
-
             if(parseInt(event.target.value) === this.state.answer[event.target.id]){
                 this.state.grid[event.target.id] = parseInt(event.target.value)
                 var winCell = document.getElementById("cell-" + event.target.id)
