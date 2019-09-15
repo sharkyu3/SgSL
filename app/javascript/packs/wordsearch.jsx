@@ -50,7 +50,10 @@ export default class WordSearch extends React.Component{
                 this.state.answer.push(col)
             })
         })
-        this.setState({grid: ws.grid, butclass: "hide", restartclass: "start-game", boardclass: "col-10 grid-holder"})
+        this.setState({grid: ws.grid, butclass: "hide", restartclass: "start-game", boardclass: "col-10 grid-holder", congrats: "hide",correctcounter: 0, clicked: null, direction: null, forcheck: [], idsclicked: []})
+
+     console.log("inside start", this.state.answer);
+     console.log("start 2", this.state.words)
     }
 
     checkWord(){
@@ -75,7 +78,7 @@ export default class WordSearch extends React.Component{
     checkWin(){
         if (parseInt(this.state.correctcounter) === 9){
             console.log("whoopie won!!!", this.state.correctcounter);
-            this.setState({butclass: "hide", congrats:"congrats", grid: null, answer: [], restartclass: "start-game"})
+            this.setState({butclass: "hide", congrats:"congrats", grid: null, answer: [], restartclass: "start-game", boardclass: "hide", words: RandomWords({exactly: 10, maxLength: 10})})
         }else{
             console.log("havent win", this.state.correctcounter)
             this.setState({clicked: null, direction: null, forcheck: [], idsclicked: []})
