@@ -54,10 +54,10 @@
     },
     "wordsearch": {
       "js": [
-        "/packs/js/wordsearch-7a91b6636a6e19ea63da.js"
+        "/packs/js/wordsearch-8ccebecd39fa2eb2ad36.js"
       ],
       "js.map": [
-        "/packs/js/wordsearch-7a91b6636a6e19ea63da.js.map"
+        "/packs/js/wordsearch-8ccebecd39fa2eb2ad36.js.map"
       ]
     },
     "wordshome": {
@@ -77,8 +77,8 @@
   "numbers.js.map": "/packs/js/numbers-f54f1702b3fe1b70c388.js.map",
   "sudoku.js": "/packs/js/sudoku-5a19593dfc7a9563cba7.js",
   "sudoku.js.map": "/packs/js/sudoku-5a19593dfc7a9563cba7.js.map",
-  "wordsearch.js": "/packs/js/wordsearch-7a91b6636a6e19ea63da.js",
-  "wordsearch.js.map": "/packs/js/wordsearch-7a91b6636a6e19ea63da.js.map",
+  "wordsearch.js": "/packs/js/wordsearch-8ccebecd39fa2eb2ad36.js",
+  "wordsearch.js.map": "/packs/js/wordsearch-8ccebecd39fa2eb2ad36.js.map",
   "wordshome.js": "/packs/js/wordshome-6348230bb3ce3f445920.js",
   "wordshome.js.map": "/packs/js/wordshome-6348230bb3ce3f445920.js.map"
 }

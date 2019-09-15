@@ -339,11 +339,9 @@ button:active{
 
 /* WORDSEARCH STYLING */
 .board-holder{
-	border: 1px solid red;
 }
 
 .word-holder{
-	border: 1px solid blue;
 }
 
 .alp-cell{
@@ -353,4 +351,8 @@ button:active{
 
 .pic-cell{
 	width: 100%;
+}
+
+.selected{
+	border: 2px solid red;
 }
