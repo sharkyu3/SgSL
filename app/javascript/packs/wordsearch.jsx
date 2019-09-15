@@ -14,13 +14,10 @@ export default class WordSearch extends React.Component{
             butclass: "start-game",
             congrats: "hide",
             restartclass: "hide",
-            grid: null
+            grid: null,
+            boardclass: "col-10 grid-holder"
         };
     }
-
-    //make wordsearch puzzle - return array
-    //map over wordsearch puzzle to fnd matching alphabet and insert link (array should return 100 links if 10x10)
-    //map over array of links and return gameboard
 
     componentDidMount() {
         this.getAlphabets();
@@ -51,6 +48,7 @@ export default class WordSearch extends React.Component{
         let array = [];
         let alphabetlink = [];
         let board = "";
+        let wordsDisplay = "";
 
         if (this.state.grid !== null){
             console.log("grid has been set");
@@ -66,6 +64,15 @@ export default class WordSearch extends React.Component{
         }
         console.log("does array work?", array)
 
+        if (array.length > 0){
+            wordsDisplay = this.state.words.map((word, index)=>{
+                return <div className="wordies" id={word} key={index}>{word.toUpperCase()}</div>
+            })
+            board = array.map((image, index)=>{
+                return <div className="alp-cell" id={index} key={index}><img className="pic-cell" src={image}/></div>
+            })
+        }
+
         return(
             <div className="game-container">
                 <div className="row">
@@ -80,11 +87,14 @@ export default class WordSearch extends React.Component{
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-8 grid-holder">
+                    <div className={this.state.boardclass}>
                         <div className="row">
                             <div className="col-8 board-holder">
+                                {board}
                             </div>
                             <div className="col-4 word-holder">
+                                <h5>Find these words:</h5>
+                                {wordsDisplay}
                             </div>
                         </div>
                     </div>

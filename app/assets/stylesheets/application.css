@@ -345,3 +345,12 @@ button:active{
 .word-holder{
 	border: 1px solid blue;
 }
+
+.alp-cell{
+	width: 10%;
+	display: inline-block;
+}
+
+.pic-cell{
+	width: 100%;
+}
