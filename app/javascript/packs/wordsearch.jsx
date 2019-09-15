@@ -18,6 +18,8 @@ export default class WordSearch extends React.Component{
             answer: [],
             correctcounter: 0,
             clicked: null,
+            direction: null,
+            forcheck: [],
             boardclass: "col-10 grid-holder"
         };
     }
@@ -55,21 +57,91 @@ export default class WordSearch extends React.Component{
 
     checkWord(){
         if(this.state.clicked === null){
-            console.log("clicked is null")
+            this.state.forcheck.push(this.state.answer[event.target.id])
             this.setState({clicked: event.target.id})
             var target = document.getElementById(event.target.id);
-            target.classList.add("selected")
-        }else if(parseInt(event.target.id) === parseInt(this.state.clicked) + 1 || parseInt(event.target.id) === parseInt(this.state.clicked) - 1 || parseInt(event.target.id) === parseInt(this.state.clicked) + 10 || parseInt(event.target.id) === parseInt(this.state.clicked) - 10 || parseInt(event.target.id) === parseInt(this.state.clicked) + 11 || parseInt(event.target.id) === parseInt(this.state.clicked) - 11 || parseInt(event.target.id) === parseInt(this.state.clicked) + 9 || parseInt(event.target.id) === parseInt(this.state.clicked) - 9){
-            this.setState({clicked: event.target.id});
-            var target = document.getElementById(event.target.id);
-            target.classList.add("selected")
-            console.log("highlighting",target);
-            console.log("check answer", this.state.answer[event.target.id]);
+            target.classList.add("selected");
+            console.log("clicked is null, set first", this.state.forcheck);
+            console.log("and another", this.state.clicked)
+        }else{
+            if(this.state.forcheck.length === 1){
+                if(parseInt(event.target.id) === parseInt(this.state.clicked) + 1 || parseInt(event.target.id) === parseInt(this.state.clicked) - 1 || parseInt(event.target.id) === parseInt(this.state.clicked) + 10 || parseInt(event.target.id) === parseInt(this.state.clicked) - 10 || parseInt(event.target.id) === parseInt(this.state.clicked) + 11 || parseInt(event.target.id) === parseInt(this.state.clicked) - 11 || parseInt(event.target.id) === parseInt(this.state.clicked) + 9 || parseInt(event.target.id) === parseInt(this.state.clicked) - 9){
+                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.setState({clicked: event.target.id});
+                    var target = document.getElementById(event.target.id);
+                    this.checkWin();
+                    target.classList.add("selected");
+                    if(parseInt(event.target.id) === parseInt(this.state.clicked) + 1){
+                        this.setState({direction:"east"})
+                    }else if(parseInt(event.target.id) === parseInt(this.state.clicked) - 1){
+                        this.setState({direction:"west"})
+                    }else if(parseInt(event.target.id) === parseInt(this.state.clicked) + 10){
+                        this.setState({direction:"sth"})
+                    }else if(parseInt(event.target.id) === parseInt(this.state.clicked) - 10){
+                        this.setState({direction:"nth"})
+                    }else if(parseInt(event.target.id) === parseInt(this.state.clicked) - 11){
+                        this.setState({direction:"nw"})
+                    }else if(parseInt(event.target.id) === parseInt(this.state.clicked) + 9){
+                        this.setState({direction:"sw"})
+                    }else if(parseInt(event.target.id) === parseInt(this.state.clicked) - 9){
+                        this.setState({direction:"ne"})
+                    }else if(parseInt(event.target.id) === parseInt(this.state.clicked) + 11){
+                        this.setState({direction:"se"})
+                    }
+                }
+            }else{
+                if (this.state.direction === "east" && parseInt(event.target.id) === parseInt(this.state.clicked) + 1){
+                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.setState({clicked: event.target.id});
+                    var target = document.getElementById(event.target.id);
+                    target.classList.add("selected");
+                    this.checkWin();
+                } else if (this.state.direction === "west" && parseInt(event.target.id) === parseInt(this.state.clicked) - 1){
+                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.setState({clicked: event.target.id});
+                    var target = document.getElementById(event.target.id);
+                    target.classList.add("selected");
+                    this.checkWin();
+                } else if (this.state.direction === "nth" && parseInt(event.target.id) === parseInt(this.state.clicked) - 10){
+                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.setState({clicked: event.target.id});
+                    var target = document.getElementById(event.target.id);
+                    target.classList.add("selected");
+                    this.checkWin();
+                }else if (this.state.direction === "sth" && parseInt(event.target.id) === parseInt(this.state.clicked) + 10){
+                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.setState({clicked: event.target.id});
+                    var target = document.getElementById(event.target.id);
+                    target.classList.add("selected");
+                    this.checkWin();
+                }else if (this.state.direction === "nw" && parseInt(event.target.id) === parseInt(this.state.clicked) - 11){
+                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.setState({clicked: event.target.id});
+                    var target = document.getElementById(event.target.id);
+                    target.classList.add("selected");
+                    this.checkWin();
+                } else if (this.state.direction === "sw" && parseInt(event.target.id) === parseInt(this.state.clicked) + 9){
+                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.setState({clicked: event.target.id});
+                    var target = document.getElementById(event.target.id);
+                    target.classList.add("selected");
+                    this.checkWin();
+                }else if (this.state.direction === "ne" && parseInt(event.target.id) === parseInt(this.state.clicked) - 9){
+                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.setState({clicked: event.target.id});
+                    var target = document.getElementById(event.target.id);
+                    target.classList.add("selected");
+                    this.checkWin();
+                }else if (this.state.direction === "se" && parseInt(event.target.id) === parseInt(this.state.clicked) +11){
+                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.setState({clicked: event.target.id});
+                    var target = document.getElementById(event.target.id);
+                    target.classList.add("selected");
+                    this.checkWin();
+                }
+            }
         }
 
-        //highlight cell selected by changing its class
-        //change classname to selected
-        //push corresponding answer alphabet into temp array
         //concat temp array to string
         //check temp against this.state.words ALL LOWERCASE
         //if match, correct, change word div to different color, strikethrough and show merdeaf applause, add 1 to correct counter
@@ -78,8 +150,7 @@ export default class WordSearch extends React.Component{
     }
 
     render(){
-
-        console.log("inside render", this.state.answer)
+        console.log("inside render", this.state.forcheck)
         let array = [];
         let alphabetlink = [];
         let board = "";
