@@ -64016,3 +64016,52 @@ Processing by GamesController#wordsearch as JSON
 Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/games/wordsearch" for ::1 at 2019-09-15 17:42:09 +0800
+Processing by GamesController#wordsearch as HTML
+  Rendering games/wordsearch.html.erb within layouts/application
+  Rendered games/wordsearch.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/wordsearch.json" for ::1 at 2019-09-15 17:42:10 +0800
+Processing by GamesController#wordsearch as JSON
+  [1m[36mAlphabet Load (1.8ms)[0m  [1m[34mSELECT "alphabets".* FROM "alphabets"[0m
+  ↳ app/controllers/games_controller.rb:17
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/games/wordsearch" for ::1 at 2019-09-15 17:43:24 +0800
+Processing by GamesController#wordsearch as HTML
+  Rendering games/wordsearch.html.erb within layouts/application
+  Rendered games/wordsearch.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 35ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/wordsearch.json" for ::1 at 2019-09-15 17:43:25 +0800
+Processing by GamesController#wordsearch as JSON
+  [1m[36mAlphabet Load (1.1ms)[0m  [1m[34mSELECT "alphabets".* FROM "alphabets"[0m
+  ↳ app/controllers/games_controller.rb:17
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/games/index" for ::1 at 2019-09-15 17:44:17 +0800
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/wordsearch" for ::1 at 2019-09-15 17:44:22 +0800
+Processing by GamesController#wordsearch as HTML
+  Rendering games/wordsearch.html.erb within layouts/application
+  Rendered games/wordsearch.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/games/wordsearch.json" for ::1 at 2019-09-15 17:44:22 +0800
+Processing by GamesController#wordsearch as JSON
+  [1m[36mAlphabet Load (2.3ms)[0m  [1m[34mSELECT "alphabets".* FROM "alphabets"[0m
+  ↳ app/controllers/games_controller.rb:17
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 2.3ms)
+
+

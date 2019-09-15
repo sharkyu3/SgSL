@@ -238,12 +238,12 @@ export default class WordSearch extends React.Component{
                 <div className="row">
                     <div className={this.state.boardclass}>
                         <div className="row">
-                            <div className="col-8 board-holder">
+                            <div className="col-9 board-holder">
                                 <h5 className="ins">Click on the first letter of your selection to undo!</h5>
                                 {board}
                             </div>
-                            <div className="col-4 word-holder">
-                                <h5><u>Find these words:</u></h5>
+                            <div className="col-3 word-holder">
+                                <h5 className="find"><u>Find these words:</u></h5>
                                 {wordsDisplay}
                             </div>
                         </div>
