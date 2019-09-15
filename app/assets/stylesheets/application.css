@@ -338,10 +338,11 @@ button:active{
 }
 
 /* WORDSEARCH STYLING */
-.board-holder{
-}
-
-.word-holder{
+.wordies{
+	font-family: 'Arimo', sans-serif;
+	color: #fb8200;
+	font-size: 170%;
+	height: 9%;
 }
 
 .alp-cell{
@@ -353,6 +354,21 @@ button:active{
 	width: 100%;
 }
 
+.done{
+	border: 2px solid black;
+}
+
 .selected{
 	border: 2px solid red;
+}
+
+.found{
+	text-decoration: line-through;
+	color: grey;
+}
+
+.ins{
+	font-family: 'Arimo', sans-serif;
+	margin: 0 auto;
+	color: #fb8200;
 }

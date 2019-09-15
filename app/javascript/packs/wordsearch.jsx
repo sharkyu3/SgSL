@@ -20,8 +20,11 @@ export default class WordSearch extends React.Component{
             clicked: null,
             direction: null,
             forcheck: [],
-            boardclass: "col-10 grid-holder"
-        };
+            idsclicked: [],
+            boardclass: "hide"
+        }
+        this.select = this.select.bind(this);
+        this.deselect = this.deselect.bind(this)
     }
 
     componentDidMount() {
@@ -47,29 +50,66 @@ export default class WordSearch extends React.Component{
                 this.state.answer.push(col)
             })
         })
-        this.setState({grid: ws.grid, butclass: "hide", restartclass: "start-game"})
-    }
-
-    checkWin(){
-        console.log("checking for win");
-        //check counter. if counter = 10, WINNNNN!
+        this.setState({grid: ws.grid, butclass: "hide", restartclass: "start-game", boardclass: "col-10 grid-holder"})
     }
 
     checkWord(){
+        this.state.words.map(word=>{
+            if(word === this.state.forcheck.join('').toLowerCase()){
+                var newCount = this.state.correctcounter + 1;
+                this.setState({correctcounter: newCount});
+                this.state.idsclicked.map(id =>{
+                    var temp = document.getElementById(parseInt(id));
+                    temp.classList.remove("selected");
+                    temp.classList.add("done");
+                    temp.classList.remove("selected");
+                })
+                var wordie = document.getElementById(this.state.forcheck.join('').toLowerCase());
+                wordie.classList.add("found");
+
+                this.checkWin();
+            }
+        })
+    }
+
+    checkWin(){
+        if (parseInt(this.state.correctcounter) === 9){
+            console.log("whoopie won!!!", this.state.correctcounter);
+            this.setState({butclass: "hide", congrats:"congrats", grid: null, answer: [], restartclass: "start-game"})
+        }else{
+            console.log("havent win", this.state.correctcounter)
+            this.setState({clicked: null, direction: null, forcheck: [], idsclicked: []})
+        }
+    }
+
+    deselect(){
+        if(this.state.idsclicked.length > 0){
+            if(parseInt(this.state.idsclicked[0]) === parseInt(event.target.id)){
+                this.state.idsclicked.map(id => {
+                    var temp = document.getElementById(parseInt(id));
+                    temp.classList.remove('selected')
+                })
+                this.setState({clicked: null, direction: null, forcheck: [], idsclicked: []})
+            }
+        }
+        this.select()
+    }
+
+    select(){
         if(this.state.clicked === null){
-            this.state.forcheck.push(this.state.answer[event.target.id])
+            this.state.forcheck.push(this.state.answer[event.target.id]);
+            this.state.idsclicked.push(event.target.id);
             this.setState({clicked: event.target.id})
             var target = document.getElementById(event.target.id);
             target.classList.add("selected");
-            console.log("clicked is null, set first", this.state.forcheck);
-            console.log("and another", this.state.clicked)
         }else{
             if(this.state.forcheck.length === 1){
                 if(parseInt(event.target.id) === parseInt(this.state.clicked) + 1 || parseInt(event.target.id) === parseInt(this.state.clicked) - 1 || parseInt(event.target.id) === parseInt(this.state.clicked) + 10 || parseInt(event.target.id) === parseInt(this.state.clicked) - 10 || parseInt(event.target.id) === parseInt(this.state.clicked) + 11 || parseInt(event.target.id) === parseInt(this.state.clicked) - 11 || parseInt(event.target.id) === parseInt(this.state.clicked) + 9 || parseInt(event.target.id) === parseInt(this.state.clicked) - 9){
-                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.state.forcheck.push(this.state.answer[event.target.id]);
+                    this.state.idsclicked.push(event.target.id);
                     this.setState({clicked: event.target.id});
                     var target = document.getElementById(event.target.id);
-                    this.checkWin();
+                    this.checkWord();
                     target.classList.add("selected");
                     if(parseInt(event.target.id) === parseInt(this.state.clicked) + 1){
                         this.setState({direction:"east"})
@@ -91,66 +131,67 @@ export default class WordSearch extends React.Component{
                 }
             }else{
                 if (this.state.direction === "east" && parseInt(event.target.id) === parseInt(this.state.clicked) + 1){
-                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.state.forcheck.push(this.state.answer[event.target.id]);
+                    this.state.idsclicked.push(event.target.id);
                     this.setState({clicked: event.target.id});
                     var target = document.getElementById(event.target.id);
                     target.classList.add("selected");
-                    this.checkWin();
+                    this.checkWord();
                 } else if (this.state.direction === "west" && parseInt(event.target.id) === parseInt(this.state.clicked) - 1){
-                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.state.forcheck.push(this.state.answer[event.target.id]);
+                    this.state.idsclicked.push(event.target.id);
                     this.setState({clicked: event.target.id});
                     var target = document.getElementById(event.target.id);
                     target.classList.add("selected");
-                    this.checkWin();
+                    this.checkWord();
                 } else if (this.state.direction === "nth" && parseInt(event.target.id) === parseInt(this.state.clicked) - 10){
-                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.state.forcheck.push(this.state.answer[event.target.id]);
+                    this.state.idsclicked.push(event.target.id);
                     this.setState({clicked: event.target.id});
                     var target = document.getElementById(event.target.id);
                     target.classList.add("selected");
-                    this.checkWin();
+                    this.checkWord();
                 }else if (this.state.direction === "sth" && parseInt(event.target.id) === parseInt(this.state.clicked) + 10){
-                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.state.forcheck.push(this.state.answer[event.target.id]);
+                    this.state.idsclicked.push(event.target.id);
                     this.setState({clicked: event.target.id});
                     var target = document.getElementById(event.target.id);
                     target.classList.add("selected");
-                    this.checkWin();
+                    this.checkWord();
                 }else if (this.state.direction === "nw" && parseInt(event.target.id) === parseInt(this.state.clicked) - 11){
-                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.state.forcheck.push(this.state.answer[event.target.id]);
+                    this.state.idsclicked.push(event.target.id);
                     this.setState({clicked: event.target.id});
                     var target = document.getElementById(event.target.id);
                     target.classList.add("selected");
-                    this.checkWin();
+                    this.checkWord();
                 } else if (this.state.direction === "sw" && parseInt(event.target.id) === parseInt(this.state.clicked) + 9){
-                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.state.forcheck.push(this.state.answer[event.target.id]);
+                    this.state.idsclicked.push(event.target.id);
                     this.setState({clicked: event.target.id});
                     var target = document.getElementById(event.target.id);
                     target.classList.add("selected");
-                    this.checkWin();
+                    this.checkWord();
                 }else if (this.state.direction === "ne" && parseInt(event.target.id) === parseInt(this.state.clicked) - 9){
-                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.state.forcheck.push(this.state.answer[event.target.id]);
+                    this.state.idsclicked.push(event.target.id);
                     this.setState({clicked: event.target.id});
                     var target = document.getElementById(event.target.id);
                     target.classList.add("selected");
-                    this.checkWin();
+                    this.checkWord();
                 }else if (this.state.direction === "se" && parseInt(event.target.id) === parseInt(this.state.clicked) +11){
-                    this.state.forcheck.push(this.state.answer[event.target.id])
+                    this.state.forcheck.push(this.state.answer[event.target.id]);
+                    this.state.idsclicked.push(event.target.id);
                     this.setState({clicked: event.target.id});
                     var target = document.getElementById(event.target.id);
                     target.classList.add("selected");
-                    this.checkWin();
+                    this.checkWord();
                 }
             }
         }
-
-        //concat temp array to string
-        //check temp against this.state.words ALL LOWERCASE
-        //if match, correct, change word div to different color, strikethrough and show merdeaf applause, add 1 to correct counter
-        //if match, check for win
-        //if not match, shake screen and show alamak
     }
 
     render(){
-        console.log("inside render", this.state.forcheck)
         let array = [];
         let alphabetlink = [];
         let board = "";
@@ -158,7 +199,6 @@ export default class WordSearch extends React.Component{
         let answerBoard = []
 
         if (this.state.grid !== null){
-            console.log("grid has been set");
             board = this.state.grid.map((fixed, x) => {
                 this.state.grid[x].map((alp, y)=>{
                     this.state.alphabets.map(alphabets=> {
@@ -175,7 +215,7 @@ export default class WordSearch extends React.Component{
                 return <div className="wordies" id={word} key={index}>{word.toUpperCase()}</div>
             })
             board = array.map((image, index)=>{
-                return <div className="alp-cell" id={index} key={index}><img className="pic-cell" id={index} src={image} onClick={()=>this.checkWord()}/></div>
+                return <div className="alp-cell" key={index}><img className="pic-cell" id={index} src={image} onClick={()=>this.deselect()} onKeyDown={()=>{this.resetState()}}/></div>
             })
         }
 
@@ -196,10 +236,11 @@ export default class WordSearch extends React.Component{
                     <div className={this.state.boardclass}>
                         <div className="row">
                             <div className="col-8 board-holder">
+                                <h5 className="ins">Click on the first letter of your selection to undo!</h5>
                                 {board}
                             </div>
                             <div className="col-4 word-holder">
-                                <h5>Find these words:</h5>
+                                <h5><u>Find these words:</u></h5>
                                 {wordsDisplay}
                             </div>
                         </div>
