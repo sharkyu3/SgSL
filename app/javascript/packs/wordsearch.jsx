@@ -40,14 +40,32 @@ export default class WordSearch extends React.Component{
           upperCase: true
         };
 
-        var puzzle = WordPuzzle.grid();
+        var ws = new WordPuzzle(options);
 
-        console.log("can we make puzzle?", puzzle)
-
+        this.setState({grid: ws.grid, butclass: "hide", restartclass: "start-game"})
     }
 
     render(){
-        console.log("word search render");
+        console.log("word search render", this.state.grid);
+
+        let array = [];
+        let alphabetlink = [];
+        let board = "";
+
+        if (this.state.grid !== null){
+            console.log("grid has been set");
+            board = this.state.grid.map((fixed, index) => {
+                this.state.grid[index].map((alp, index)=>{
+                    this.state.alphabets.map(alphabets=> {
+                        if(alphabets.name.toLowerCase() === alp.toLowerCase()){
+                            array.push(alphabets.link)
+                        }
+                    })
+                })
+            })
+        }
+        console.log("does array work?", array)
+
         return(
             <div className="game-container">
                 <div className="row">
@@ -62,8 +80,13 @@ export default class WordSearch extends React.Component{
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-5 grid-holder">
-
+                    <div className="col-8 grid-holder">
+                        <div className="row">
+                            <div className="col-8 board-holder">
+                            </div>
+                            <div className="col-4 word-holder">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

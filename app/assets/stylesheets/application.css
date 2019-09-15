@@ -336,3 +336,12 @@ button:active{
 	font-weight: bold;
 	color: #fb8200;
 }
+
+/* WORDSEARCH STYLING */
+.board-holder{
+	border: 1px solid red;
+}
+
+.word-holder{
+	border: 1px solid blue;
+}
