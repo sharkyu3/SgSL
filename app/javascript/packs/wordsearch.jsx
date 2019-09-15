@@ -24,7 +24,10 @@ export default class WordSearch extends React.Component{
             boardclass: "hide"
         }
         this.select = this.select.bind(this);
-        this.deselect = this.deselect.bind(this)
+        this.deselect = this.deselect.bind(this);
+        // this.fillAnswers = this.fillAnswers.bind(this);
+        // this.restartGame = this.restartGame.bind(this)
+
     }
 
     componentDidMount() {
@@ -36,6 +39,46 @@ export default class WordSearch extends React.Component{
         .then(res=>res.json())
         .then(result=>this.setState({alphabets: result}));
     }
+
+    // fillAnswers(){
+    //     console.log("just inside fill answers", this.state.answer)
+    //     if (this.state.grid.length !== 0){
+    //         var ans = this.state.grid.map((row, index) => {
+    //             this.state.grid[index].map((col, index) => {
+    //                 this.state.answer.push(col)
+    //             })
+    //         })
+    //         console.log("banana", this.state)
+    //     }
+    //     while(this.state.answer.length > 100){
+    //         this.state.answer.shift()
+    //     }
+    //     console.log("is it done?", this.state)
+    // }
+
+    // restartGame(){
+    //     var create = RandomWords({exactly: 10, maxLength: 10});
+
+    //     const options = {
+    //       dictionary: create,
+    //       upperCase: true
+    //     };
+
+    //     var ws = new WordPuzzle(options);
+
+    //     this.setState({grid: ws.grid, boardclass: "col-10 grid-holder", congrats: "hide",correctcounter: 0, clicked: null, direction: null, forcheck: [], idsclicked: [], words: create, answer: []})
+
+    //     var cells = document.querySelectorAll('.pic-cell');
+    //     for (let i=0; i<cells.length; i++){
+    //         cells[i].classList.remove('done');
+    //         cells[i].classList.remove('selected')
+    //     }
+
+    //     var wordList = document.querySelectorAll('.wordies')
+    //     for (let i=0; i<wordList.length; i++){
+    //         wordList[i].classList.remove('found');
+    //     }
+    // }
 
     startGame(){
         const options = {
@@ -50,10 +93,7 @@ export default class WordSearch extends React.Component{
                 this.state.answer.push(col)
             })
         })
-        this.setState({grid: ws.grid, butclass: "hide", restartclass: "start-game", boardclass: "col-10 grid-holder", congrats: "hide",correctcounter: 0, clicked: null, direction: null, forcheck: [], idsclicked: []})
-
-     console.log("inside start", this.state.answer);
-     console.log("start 2", this.state.words)
+        this.setState({grid: ws.grid, butclass: "hide", restartclass: "start-game", boardclass: "col-10 grid-holder"})
     }
 
     checkWord(){
@@ -80,7 +120,6 @@ export default class WordSearch extends React.Component{
             console.log("whoopie won!!!", this.state.correctcounter);
             this.setState({butclass: "hide", congrats:"congrats", grid: null, answer: [], restartclass: "start-game", boardclass: "hide", words: RandomWords({exactly: 10, maxLength: 10})})
         }else{
-            console.log("havent win", this.state.correctcounter)
             this.setState({clicked: null, direction: null, forcheck: [], idsclicked: []})
         }
     }
@@ -195,6 +234,7 @@ export default class WordSearch extends React.Component{
     }
 
     render(){
+        console.log("render", this.state)
         let array = [];
         let alphabetlink = [];
         let board = "";
@@ -218,7 +258,7 @@ export default class WordSearch extends React.Component{
                 return <div className="wordies" id={word} key={index}>{word.toUpperCase()}</div>
             })
             board = array.map((image, index)=>{
-                return <div className="alp-cell" key={index}><img className="pic-cell" id={index} src={image} onClick={()=>this.deselect()} onKeyDown={()=>{this.resetState()}}/></div>
+                return <div className="alp-cell" key={index}><img className="pic-cell" id={index} src={image} onClick={()=>this.deselect()}/></div>
             })
         }
 
@@ -232,7 +272,7 @@ export default class WordSearch extends React.Component{
                             <img src="/pics/applause.png"/>
                         </div>
                         <button className={this.state.butclass} onClick={()=>{this.startGame()}}>Give me a puzzle!</button>
-                        <button className={this.state.restartclass} onClick={()=>{this.startGame()}}>New puzzle please!</button>
+                        <a href="/games/wordsearch"><button className={this.state.restartclass}>Play again!</button></a>
                     </div>
                 </div>
                 <div className="row">
