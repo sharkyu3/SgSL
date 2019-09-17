@@ -12,17 +12,17 @@ class MerdeafScoresController < ApplicationController
 
   # GET /merdeaf_scores/1
   # GET /merdeaf_scores/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /merdeaf_scores/new
-  def new
-    @merdeaf_score = MerdeafScore.new
-  end
+  # def new
+  #   @merdeaf_score = MerdeafScore.new
+  # end
 
   # GET /merdeaf_scores/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /merdeaf_scores
   # POST /merdeaf_scores.json
@@ -42,27 +42,27 @@ class MerdeafScoresController < ApplicationController
 
   # PATCH/PUT /merdeaf_scores/1
   # PATCH/PUT /merdeaf_scores/1.json
-  def update
-    respond_to do |format|
-      if @merdeaf_score.update(merdeaf_score_params)
-        format.html { redirect_to @merdeaf_score, notice: 'Merdeaf score was successfully updated.' }
-        format.json { render :show, status: :ok, location: @merdeaf_score }
-      else
-        format.html { render :edit }
-        format.json { render json: @merdeaf_score.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @merdeaf_score.update(merdeaf_score_params)
+  #       format.html { redirect_to @merdeaf_score, notice: 'Merdeaf score was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @merdeaf_score }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @merdeaf_score.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /merdeaf_scores/1
   # DELETE /merdeaf_scores/1.json
-  def destroy
-    @merdeaf_score.destroy
-    respond_to do |format|
-      format.html { redirect_to merdeaf_scores_url, notice: 'Merdeaf score was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @merdeaf_score.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to merdeaf_scores_url, notice: 'Merdeaf score was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
