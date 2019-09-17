@@ -47,7 +47,12 @@ export default class Main extends React.Component{
                         {allWords}
                     </div>
                     <div className="col-9 rest">
-                        <WordView clicked={this.state.clicked} />
+                        <div className="row">
+                            <WordView clicked={this.state.clicked} />
+                        </div>
+                        <div className="row">
+                            <a href="http://www.sgslsignbank.org.sg" className="wblink" target="_blank">Visit the SgSL Word Bank</a>
+                        </div>
                     </div>
                 </div>
 
