@@ -118,7 +118,7 @@ export default class SudokuGame extends React.Component{
                     return <div className="cell" id={cellID} key={index}><img src={image} /></div>
                 }else{
                     let inputID = "input-"+index
-                    return<div className="cell empty-cell" id={cellID} key={index} value={index}><input id={index} className="number-input" onChange={this.onChangeHandler}></input></div>
+                    return<div className="cell empty-cell" id={inputID} key={index} value={index}><input id={index} className="number-input" onChange={this.onChangeHandler}></input></div>
                 }
 
             })
@@ -134,7 +134,7 @@ export default class SudokuGame extends React.Component{
                             <img src="/pics/applause.png"/>
                         </div>
                         <button className={this.state.butclass} onClick={()=>{this.startGame()}}>Give me a puzzle!</button>
-                        <button className={this.state.restartclass} onClick={()=>{this.startGame()}}>New puzzle please!</button>
+                        <a href="/games/sudoku"><button className={this.state.restartclass}>New puzzle please!</button></a>
                     </div>
                 </div>
                 <div className="row">

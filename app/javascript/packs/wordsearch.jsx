@@ -40,46 +40,6 @@ export default class WordSearch extends React.Component{
         .then(result=>this.setState({alphabets: result}));
     }
 
-    // fillAnswers(){
-    //     console.log("just inside fill answers", this.state.answer)
-    //     if (this.state.grid.length !== 0){
-    //         var ans = this.state.grid.map((row, index) => {
-    //             this.state.grid[index].map((col, index) => {
-    //                 this.state.answer.push(col)
-    //             })
-    //         })
-    //         console.log("banana", this.state)
-    //     }
-    //     while(this.state.answer.length > 100){
-    //         this.state.answer.shift()
-    //     }
-    //     console.log("is it done?", this.state)
-    // }
-
-    // restartGame(){
-    //     var create = RandomWords({exactly: 10, maxLength: 10});
-
-    //     const options = {
-    //       dictionary: create,
-    //       upperCase: true
-    //     };
-
-    //     var ws = new WordPuzzle(options);
-
-    //     this.setState({grid: ws.grid, boardclass: "col-10 grid-holder", congrats: "hide",correctcounter: 0, clicked: null, direction: null, forcheck: [], idsclicked: [], words: create, answer: []})
-
-    //     var cells = document.querySelectorAll('.pic-cell');
-    //     for (let i=0; i<cells.length; i++){
-    //         cells[i].classList.remove('done');
-    //         cells[i].classList.remove('selected')
-    //     }
-
-    //     var wordList = document.querySelectorAll('.wordies')
-    //     for (let i=0; i<wordList.length; i++){
-    //         wordList[i].classList.remove('found');
-    //     }
-    // }
-
     startGame(){
         const options = {
           dictionary: this.state.words,
@@ -117,7 +77,6 @@ export default class WordSearch extends React.Component{
 
     checkWin(){
         if (parseInt(this.state.correctcounter) === 9){
-            console.log("whoopie won!!!", this.state.correctcounter);
             this.setState({butclass: "hide", congrats:"congrats", grid: null, answer: [], restartclass: "start-game", boardclass: "hide", words: RandomWords({exactly: 10, maxLength: 10})})
         }else{
             this.setState({clicked: null, direction: null, forcheck: [], idsclicked: []})
@@ -234,7 +193,6 @@ export default class WordSearch extends React.Component{
     }
 
     render(){
-        console.log("render", this.state)
         let array = [];
         let alphabetlink = [];
         let board = "";

@@ -267,6 +267,177 @@ button:active{
 	background-size: 100% 480px;
 }
 
+@keyframes slowFade {
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+#img-0.alphabets-med{
+	animation-name: slowFade;
+	animation-duration: 2.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-1.alphabets-med{
+	animation-name: slowFade;
+	animation-duration: 2.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-2.alphabets-med{
+	animation-name: slowFade;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-3.alphabets-med{
+	animation-name: slowFade;
+	animation-duration: 3.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-4.alphabets-med{
+	animation-name: slowFade;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-5.alphabets-med{
+	animation-name: slowFade;
+	animation-duration: 4.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-6.alphabets-med{
+	animation-name: slowFade;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-7.alphabets-med{
+	animation-name: slowFade;
+	animation-duration: 5.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-8.alphabets-med{
+	animation-name: slowFade;
+	animation-duration: 6s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-0.alphabets-fast{
+	animation-name: slowFade;
+	animation-duration: 1.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-1.alphabets-fast{
+	animation-name: slowFade;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-2.alphabets-fast{
+	animation-name: slowFade;
+	animation-duration: 2.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-3.alphabets-fast{
+	animation-name: slowFade;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-4.alphabets-fast{
+	animation-name: slowFade;
+	animation-duration: 3.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-5.alphabets-fast{
+	animation-name: slowFade;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-6.alphabets-fast{
+	animation-name: slowFade;
+	animation-duration: 4.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-7.alphabets-fast{
+	animation-name: slowFade;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
+#img-8.alphabets-fast{
+	animation-name: slowFade;
+	animation-duration: 5.5s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+}
+
 /* SUDOKU STYLING */
 
 .grid-holder{

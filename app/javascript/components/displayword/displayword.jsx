@@ -44,7 +44,7 @@ export default class DisplayWord extends React.Component{
             }else if(this.props.stage === 2){
                 classtype = "alphabets"
             }else if(this.props.stage === 3){
-                classtype = "alphabets-slow"
+                classtype = "alphabets"
             }else if(this.props.stage === 4){
                 classtype = "alphabets-med"
             }else if(this.props.stage === 5){
@@ -52,7 +52,8 @@ export default class DisplayWord extends React.Component{
             }
 
             imageDisplay = array.map((image, index) => {
-                return <img src={image} className={classtype} key={index}/>
+                let imageID = "img-"+index
+                return <img src={image} className={classtype} key={index} id={imageID}/>
             })
         }
 
